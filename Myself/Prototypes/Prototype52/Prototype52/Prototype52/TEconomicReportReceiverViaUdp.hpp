@@ -1,0 +1,205 @@
+#pragma once
+
+#include "./TEconomicReportReceiverBase.hpp"
+#include "./TEconomicReportReceiverViaUdpConfiguration.hpp"
+
+#include "../Common/SourceCodeModel/IncrementHeaderInclusionBalance.hpp"
+
+namespace Prototype52
+{
+//TODO I quickly fixed this code but review it
+
+   // yg? This class is not {abstract}.
+   // yg? This class is really not an economic report receiver, so maybe it should be renamed.
+   // yg? Maybe the base class should be renamed as well.
+   // yg? Do we really need this class to be a part of the economic report receivers hierarchy?
+   // yg? Consider moving this and related classes including {TEconomicReportReceiverViaUdpWithDatagramCircularQueue<>}
+   // yg? to the "../../03_EconomicReportReceiver"
+   // yg? solution folder.
+   //
+   // Visible universe.
+   //    {::Poco::TimeoutException}.
+   //    {::Poco::Net::DatagramSocket}.
+   //    {::Common::Networking::TNetworkingHelpers}.
+   //    {TEconomicReportReceiverBase< TResult_ >}.
+   //       Subclass.
+   //    {TEconomicReportReceiverViaUdpConfiguration}.
+   //    {EconomicReportReceptionTimeoutTimeSpanMilliseconds_}.
+   //       Use.
+   //    {DateTimeKeeper_}.
+   //       Use.
+   //    {EconomicReportReleaseDateTimeMillisecondsSince1970_}.
+   //       Use.
+   //    {PeerStrategyBaseModeCode_}.
+   //       Use.
+   //    {Result.PrepareReceiveDatagram}.
+   //       Call.
+   //       This method shall exist.
+   //       In case datagram length can vary, this method can zero out parts of the datagram buffer
+   //       to facilitate subsequent checksum calculation.
+   //       yg? This solution is faster than a virtual method but I might need to revisit it.
+   //       TODO 3 yg? Can or should the existance of this method be enforced by an equivalent of the C# {where} keyword?
+   //    {Result.DatagramBuffer()}.
+   //       Use, update content.
+   //       yg? See {Result.PrepareReceiveDatagram} comment above.
+   //    {Result.DatagramBufferCapacity()}.
+   //       Use.
+   //       yg? See {Result.PrepareReceiveDatagram} comment above.
+   //    {Result.TryParseDatagramBuffer}.
+   //       Call.
+   //       This method shall log any errors.
+   //       yg? See {Result.PrepareReceiveDatagram} comment above.
+   //    //{EconomicReportReceptionTimeStampMilliseconds_}.
+   //    //   Update.
+   //       It remains uninitialized.
+   //    {OutcomeCode_}.
+   //       Update.
+   //    Instance constructors -- base.
+   //       Hide, possibly implicitly. Call, possibly implicitly.
+   //    Instance destructor -- base.
+   //       Override, possibly implicitly. Call, possibly implicitly.
+   //    {Initialize} -- base.
+   //       Hide, call.
+   //    //{Prepare} -- base.
+   //    //   Override, call.
+   //    //{TryRun}.
+   //    //   Call.
+   //    {DoTryRun} -- base.
+   //       Implement.
+   //    //{TryMakeWarmUpStep} -- base.
+   //    //   Override, call.
+   //    //{WarmUp} -- base.
+   //    //   Override, call.
+   //    //{TryCreateNewsHubMessage}.
+   //    //   Call.
+   //    {LogActivityReportIfPossible} -- base.
+   //       Implement.
+
+   template
+      < typename TResult_
+      >
+   class TEconomicReportReceiverViaUdp :
+      public TEconomicReportReceiverBase< TResult_ >
+   {
+#if( /* {private LocalIPPortNumber_}. */ 1 )
+
+//TODO Parts of this comments are duplicated in multiple places. Remove them and refer to one place.
+//TODO (public|private|protected).*Port[a-z0-9_]*Number
+      // yg? Consider making this an {int} or {unsigned int}. In .NET it's an {int}.
+      // yg? But all API and POCO functions accept an {unsigned short}.
+      // yg? Consider renaming this to {LocalIPIncomingPortNumber_}, {LocalIPReceptionPortNumber_},
+      // yg? or {LocalIPReceivingPortNumber_}.
+      // yg? Consider renaming this to {IPLocalPortNumber_} but I dislike this idea. (Same applies to any
+      // yg? {IPHostName}, {IPAddress}, and even {::Poco::Net::SocketAddress}.)
+      // yg? Should we use the word "UDP" instead of "IP". Maybe not. Then I would want to use the word "UDP" or "TCP"
+      // yg? for remote host names.
+      private: unsigned short LocalIPPortNumber_;
+
+#endif
+
+#if( /* {protected Socket_}. */ 1 )
+
+      // yg? Remember to reset {SocketStateIsValid_} when a socket handle state corrupting error occurs or when closing socket handle.
+      protected: ::Poco::Net::DatagramSocket Socket_;
+
+#endif
+#if( /* {private SocketStateIsValid_}. */ 1 )
+
+      // When this is {false} we shall {close} and {init} {Socket_}.
+      // We must clear this flag after the receive timeout expires because the socket handle state becomes indeterminate in that case.
+      // yg? See {Socket_} comment.
+      private: bool SocketStateIsValid_;
+
+#endif
+
+#if( /* {public} Instance default constructor. */ 1 )
+
+      //
+
+      public: explicit TEconomicReportReceiverViaUdp();
+
+#endif
+#if( /* //{(private)} Instance copy constructor. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+#if( /* {public} Instance constructor. */ 1 )
+
+      //
+
+      public: explicit TEconomicReportReceiverViaUdp
+         ( TEconomicReportReceiverViaUdpConfiguration && configuration1
+         );
+
+#endif
+#if( /* {(public)} Instance destructor. */ 1 )
+
+      // Could be autogenerated.
+      // {virtual}.
+
+#endif
+#if( /* //{(private) operator =}. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+
+#if( /* {public Initialize}. */ 1 )
+
+      //
+
+      public: void Initialize
+         ( TEconomicReportReceiverViaUdpConfiguration && configuration1
+         );
+
+#endif
+#if( /* {private DoInitialize}. */ 1 )
+
+      //
+
+      private: void DoInitialize
+         ( TEconomicReportReceiverViaUdpConfiguration && configuration1
+         );
+
+#endif
+#if( /* {protected DoTryRun}. */ 1 )
+
+      //
+
+      protected: virtual /*bool*/ void DoTryRun() override;
+
+#endif
+
+#if( /* {public LogActivityReportIfPossible}. */ 1 )
+
+      // This method closes the socket handle, which implies that any datagrams will be dropped until another socket handle is created.
+      // yg? Contrary to the base class design, it's not required to call this method before calling {TryRun} again.
+
+      public: virtual void LogActivityReportIfPossible() override;
+
+#endif
+
+#if( /* {private CreateSocketIfNeeded}. */ 1 )
+
+      //
+
+      private: void CreateSocketIfNeeded();
+
+#endif
+#if( /* {protected ConfigureSocket}. */ 1 )
+
+      // {Socket_.close}, {Socket_.init}, and {ConfigureSocket} can be called multiple times.
+
+      protected: virtual void ConfigureSocket();
+
+#endif
+#if( /* {private TryReceiveAndProcessData}. */ 1 )
+
+      // yg? Consider removing the {AndProcess} from this method name.
+      
+      private: void TryReceiveAndProcessData();
+
+#endif
+   };
+}

@@ -1,0 +1,1487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="1_Common">
+      <UniqueIdentifier>{45f67c95-21ee-4962-9f3a-b0ab0bb6ee4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\CodeOptimization">
+      <UniqueIdentifier>{251fcb51-0636-43e4-aa41-124e38a68679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\ConditionValidation">
+      <UniqueIdentifier>{d1b24ff6-0151-4b25-a80d-67642f56cf7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\ControlFlow">
+      <UniqueIdentifier>{988d64fe-26f2-42ad-9b50-3115a1e4c82c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\DataFormatting">
+      <UniqueIdentifier>{d71529d1-9225-4e5e-9e5f-3bfd49865a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\DataStructures">
+      <UniqueIdentifier>{e291c075-1a20-4695-9ef4-f0dd502ebdc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Diagnostics">
+      <UniqueIdentifier>{e81ca082-460f-4c49-9b1d-be9c431e0d45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\ErrorHandling">
+      <UniqueIdentifier>{0d52368a-d413-4d65-ae81-a285705c2919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Math">
+      <UniqueIdentifier>{6212092d-e837-4b1a-aee4-8b72983b0f14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Networking">
+      <UniqueIdentifier>{d1eb3214-8df0-417f-b658-c5fc12614882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\ObjectModel">
+      <UniqueIdentifier>{3e7d3330-24e7-4c1b-9517-beb6dfe59ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Processes">
+      <UniqueIdentifier>{c1120cca-aa3a-4bf1-a325-30dde3dce46a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Threading">
+      <UniqueIdentifier>{2cce2fb9-5e5d-4775-bd15-fd466299cf44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Time">
+      <UniqueIdentifier>{c3a3161e-5277-478e-855a-49c3cbf09fd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\SourceCodeModel">
+      <UniqueIdentifier>{540a753d-1dd2-4b9d-be2e-88350bbcd815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Configuration">
+      <UniqueIdentifier>{f4c4708e-349f-40db-87cf-d1d73fd0d8f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\Globalization">
+      <UniqueIdentifier>{23530e7c-b04d-43ed-b785-3195eab6571d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Common\WarmUp">
+      <UniqueIdentifier>{44dd3cbd-7701-4b63-bb80-282d58f664fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Finance">
+      <UniqueIdentifier>{a18c587d-9100-454c-abac-9db8682c4387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Finance\MarketData">
+      <UniqueIdentifier>{31b912e2-ed40-4112-b63d-067071023e56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Finance\Math">
+      <UniqueIdentifier>{9e5880ed-a76f-4b4a-958f-67c1b6bf258c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Finance\ObjectModel">
+      <UniqueIdentifier>{6e7be7db-869f-46ea-9e50-1ef1608eba88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Finance\Trading">
+      <UniqueIdentifier>{303211cb-2b6f-4dff-8017-fdf707723f29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8__Work">
+      <UniqueIdentifier>{1808ce18-1b7b-4f6b-ad51-01e61bf15144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8__Work\Prototype52">
+      <UniqueIdentifier>{b6185d79-f253-4bc0-b794-fcbc2e9fafea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8__Work\Prototype52\NewsHub">
+      <UniqueIdentifier>{4acbac61-f2bb-4e91-874e-05db2fa9bcc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9__ThirdParties">
+      <UniqueIdentifier>{4ad8b02d-6e90-4710-8bbc-c6e82d684361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9__ThirdParties\Rithmic">
+      <UniqueIdentifier>{528560e6-2fe2-471b-a79b-5b2607ea9366}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9__ThirdParties\Rithmic\RApi.Cpp">
+      <UniqueIdentifier>{6ad072b5-5f19-48fe-af83-f742e0fcf195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9__ThirdParties\Rithmic\RApi.Cpp\Include">
+      <UniqueIdentifier>{dc52fa1b-ac11-4121-825e-a6340335c2d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52">
+      <UniqueIdentifier>{bad48097-2bd5-4a37-bde6-6591f4fc26c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade">
+      <UniqueIdentifier>{862bf5e2-7de1-41cc-a70a-06dcdf54c4d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\2_Uncategorized">
+      <UniqueIdentifier>{a2a3dd42-5c42-4842-85c5-b2b7fb6b3b3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\3_Instrument">
+      <UniqueIdentifier>{a8e50480-1b8a-4c95-83dd-4abbea46ab98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\4_MarketData">
+      <UniqueIdentifier>{6de75653-926d-4cbc-bb78-919cddd1e668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\6_REngineAdapterConfiguration">
+      <UniqueIdentifier>{c8c064a5-3cbc-4e2d-a884-c22996a83dc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers">
+      <UniqueIdentifier>{d366b0be-35c4-4df8-ba9e-5bdf12b34e33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers\__3">
+      <UniqueIdentifier>{89117856-743f-4355-a114-b7507bfb57fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading">
+      <UniqueIdentifier>{7c896008-5297-4451-ac87-865bb43b3572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter">
+      <UniqueIdentifier>{c9393edf-fb27-4dd9-ba85-a021bec4d0d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter\__1">
+      <UniqueIdentifier>{1d61fb25-169a-4ab6-8694-3d36bd320308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter\__2">
+      <UniqueIdentifier>{ba6a09fa-4b98-4417-887b-9a3093244bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter\__3">
+      <UniqueIdentifier>{10df9c95-47c3-4fa0-bdf2-fc3b18898447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter\__4">
+      <UniqueIdentifier>{a4ac97b9-dc7a-4a2f-b37c-a1b8810e9253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0033_Application">
+      <UniqueIdentifier>{c7fcb94e-89c5-47f1-b048-933e5285011b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0032_TradingSystem">
+      <UniqueIdentifier>{12f2b4f6-b8b0-4d6f-accd-7d5e4fc8726d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0031_StrategyFactory">
+      <UniqueIdentifier>{ad451113-b146-48b6-86cd-1ac27b962227}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy">
+      <UniqueIdentifier>{a0c09cff-2fab-461d-a085-54d8a141890d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy">
+      <UniqueIdentifier>{bb330652-505a-40a2-9022-0680e91a22b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase">
+      <UniqueIdentifier>{57aa9c47-611e-405d-b318-8ba8ecb443d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy">
+      <UniqueIdentifier>{e2696f6b-78cd-43ef-9490-e19c18032039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy\__1">
+      <UniqueIdentifier>{45f7463d-fb50-4890-bfc4-80ff45e4a57c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy\__2">
+      <UniqueIdentifier>{d1e26fad-a14d-47ab-b165-18474a7d722d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy\__3">
+      <UniqueIdentifier>{2d94c477-ef95-4817-b90f-125343090c96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy\__4">
+      <UniqueIdentifier>{363ff283-7406-451b-8ad8-9ba86958d35b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0021_StrategyBase">
+      <UniqueIdentifier>{50d2e759-026b-43be-a359-f7dd1de6c685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer">
+      <UniqueIdentifier>{964d1934-7f72-48ed-9a7c-2c09e771ba22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer\7_EconomicReportReceiverViaUdpWithDatagramCircularQueue">
+      <UniqueIdentifier>{2ae694ad-f6fc-4672-abab-a087732c9658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer\005_PeerMessageSender">
+      <UniqueIdentifier>{715d439c-179c-48a8-a819-20ac9ec05d07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp">
+      <UniqueIdentifier>{f2b8c738-095e-4c98-9700-417d3aa5e276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver">
+      <UniqueIdentifier>{c5d12881-e1a2-4352-96fa-f937584843d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\1_NewsHub">
+      <UniqueIdentifier>{76777305-dcdd-41f5-81e4-fcf6eccbb85c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase">
+      <UniqueIdentifier>{b5dd6ca8-9eb4-4a20-97ac-c8d7d73b401e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase">
+      <UniqueIdentifier>{a457745b-b626-4459-86a1-3e5e033cbaf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader">
+      <UniqueIdentifier>{d0e814c5-cff8-47fd-a6c4-fc1c43aa1e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader">
+      <UniqueIdentifier>{6e8608eb-3db3-4aef-88ac-81039f618289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase">
+      <UniqueIdentifier>{23cca135-317c-483c-a8a3-fc6b5cecd4af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver">
+      <UniqueIdentifier>{3da83a55-1229-462d-aee6-1bfa99088872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory">
+      <UniqueIdentifier>{2e8375f3-c57c-4ae8-a3da-b468debafac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\12_Misc">
+      <UniqueIdentifier>{14212682-a971-4dfb-aea6-a2ad1652530d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading\__3">
+      <UniqueIdentifier>{9ed48ca8-d2af-4eab-97ef-f2efa5914624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter\__5">
+      <UniqueIdentifier>{45d4ca53-b9d9-4c6d-b408-bce4a6fb95d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy\__5">
+      <UniqueIdentifier>{511fb044-3319-4c4c-8af8-4d46e47144f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__3">
+      <UniqueIdentifier>{1befe58c-ceda-4c9b-bd3a-504c6f2430be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00000_Old_Strategy">
+      <UniqueIdentifier>{fb7c1aa5-b4ca-4dc3-9801-b8d98f1b289d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers\__1">
+      <UniqueIdentifier>{83c7676c-4432-4c88-be1e-9b732c6a3836}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers\__2">
+      <UniqueIdentifier>{26e877b5-a628-4a90-bb8e-2739d36cc21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers\__4">
+      <UniqueIdentifier>{2bdc1963-86dc-4141-8984-088201b47384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers\__5">
+      <UniqueIdentifier>{a56323ac-e182-41c0-a7d1-8e7eade09d70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\001_RApiHelpers\__6">
+      <UniqueIdentifier>{72835eff-12fc-41cf-86fc-4050c302dfb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading\__6">
+      <UniqueIdentifier>{f4f14506-8be0-4681-a504-3f493a2634ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading\__5">
+      <UniqueIdentifier>{d2ebd09b-d2a2-4f4a-823e-7341b7789c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading\__4">
+      <UniqueIdentifier>{26eef48a-a9f4-45ee-aadb-342ccf9600dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading\__2">
+      <UniqueIdentifier>{ce61d3d2-6f4f-448e-b921-41041eb807b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\005_Trading\__1">
+      <UniqueIdentifier>{1bbb2a67-ec35-4be0-a27d-c02f6bb73550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="004_RApiFacade\007_REngineAdapter\__6">
+      <UniqueIdentifier>{837b7b7d-bcb8-4f69-aef7-83b6b39998ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__4">
+      <UniqueIdentifier>{fb2621ea-5d01-4933-920e-7b304dd71fc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__5">
+      <UniqueIdentifier>{f45c3f25-36fd-4098-bad4-2d4728df6e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__6">
+      <UniqueIdentifier>{a5c83dbd-d56f-41cc-8312-42de44eef89c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__1">
+      <UniqueIdentifier>{82802352-d040-4637-a679-d942d671a386}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__22">
+      <UniqueIdentifier>{b34eb625-bb79-45d1-ab7d-c842b4ae98ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__21">
+      <UniqueIdentifier>{a49c9b49-9e82-41f6-9126-ace529d589b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__5">
+      <UniqueIdentifier>{53753021-b408-4d17-a310-2c193185b1e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__6">
+      <UniqueIdentifier>{7499369e-f69d-498e-aea9-7175cea43a57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__1">
+      <UniqueIdentifier>{a8dc142d-437c-4b06-abe5-08b8525829a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__22">
+      <UniqueIdentifier>{de28160a-6cbb-408b-938b-9c038c113c48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__21">
+      <UniqueIdentifier>{30c58391-c149-4c05-977b-cf21a5f42b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__4">
+      <UniqueIdentifier>{ce94bc0a-b611-4c16-9507-9943af1574b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00026_SecondaryPeerStrategy\__3">
+      <UniqueIdentifier>{6ab18ca0-3f84-4bc8-b5ca-0b3e4e753857}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00025_PeerStrategyBase\__3">
+      <UniqueIdentifier>{7440f343-a30b-4554-94c2-c506584e3db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__4">
+      <UniqueIdentifier>{b6c1bf70-f4f5-4bcb-a26a-f83366c7cd17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__5">
+      <UniqueIdentifier>{b5f1fe09-807b-48dc-9753-33be3daa4178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__6">
+      <UniqueIdentifier>{1184dc3f-18ec-46c2-a451-3ea1d924d599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__21">
+      <UniqueIdentifier>{64b17974-101c-4966-b708-b44909aea472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__22">
+      <UniqueIdentifier>{d804cfad-ab55-4737-8c72-774b79a8c841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\00027_PrimaryPeerStrategy\__1">
+      <UniqueIdentifier>{c7acdad1-8f11-4d6e-8768-c9ffdcc7ce89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer\005_PeerMessageSender\__4">
+      <UniqueIdentifier>{b3b819bf-d5b0-4504-b19a-cd6eef9bc75d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__4">
+      <UniqueIdentifier>{e57f6592-e05e-47ca-a1c2-7f288e95f4e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__6">
+      <UniqueIdentifier>{5adf657b-8906-4dc5-96cf-0912d4654b3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0021_StrategyBase\__5">
+      <UniqueIdentifier>{7dde84c8-40db-49d2-bd95-cc33f71a6efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0022_WarmUpStrategy\__6">
+      <UniqueIdentifier>{bbee08cc-fac6-4034-b9f3-fd52fac3bbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0031_StrategyFactory\__5">
+      <UniqueIdentifier>{a4706d06-2aa0-4316-a56d-64f07bfff435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0032_TradingSystem\__5">
+      <UniqueIdentifier>{302e721f-843c-409f-b0a3-781c4044ca8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0005_Prototype52\0033_Application\__5">
+      <UniqueIdentifier>{580f8211-6d5e-4eb7-9157-063471fc0891}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TargetVer.h" />
+    <ClInclude Include="Common\StdAfx.h">
+      <Filter>1_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\CodeOptimization\Macros.hpp">
+      <Filter>1_Common\CodeOptimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\CodeOptimization\StdAfx.h">
+      <Filter>1_Common\CodeOptimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\CodeOptimization\TCodeOptimizationHelpers.hpp">
+      <Filter>1_Common\CodeOptimization</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ConditionValidation\StdAfx.h">
+      <Filter>1_Common\ConditionValidation</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ConditionValidation\TConditionValidationHelpers.hpp">
+      <Filter>1_Common\ConditionValidation</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ControlFlow\StdAfx.h">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DataFormatting\StdAfx.h">
+      <Filter>1_Common\DataFormatting</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DataFormatting\TDataFormattingHelpers.hpp">
+      <Filter>1_Common\DataFormatting</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DataStructures\StdAfx.h">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DataStructures\TPair.hpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DataStructures\TUnionPair.hpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Diagnostics\Macros.hpp">
+      <Filter>1_Common\Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Diagnostics\StdAfx.h">
+      <Filter>1_Common\Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Diagnostics\TDiagnosticsHelpers.hpp">
+      <Filter>1_Common\Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\StdAfx.h">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\StdAfx.h">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\StdAfx.h">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ObjectModel\StdAfx.h">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Processes\StdAfx.h">
+      <Filter>1_Common\Processes</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Processes\TProcessHelpers.hpp">
+      <Filter>1_Common\Processes</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Threading\StdAfx.h">
+      <Filter>1_Common\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Time\StdAfx.h">
+      <Filter>1_Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\StdAfx.h">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\Math\StdAfx.h">
+      <Filter>2_Finance\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\ObjectModel\StdAfx.h">
+      <Filter>2_Finance\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\Trading\StdAfx.h">
+      <Filter>2_Finance\Trading</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\StdAfx.h">
+      <Filter>0005_Prototype52</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\StdAfx.h">
+      <Filter>004_RApiFacade</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\include\RApi.h">
+      <Filter>9__ThirdParties\Rithmic\RApi.Cpp\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\StdAfx.h">
+      <Filter>2_Finance</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ControlFlow\TControlFlowHelpers.hpp">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ControlFlow\TOperationCancelledException.hpp">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TCheapMovingAverageCalculatorConfigurationHelpers.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TCheapMovingAverageCalculatorConfiguration.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TCheapMovingAverageCalculator.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TMathHelpers.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\TNetworkingHelpers.hpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ObjectModel\TObjectModelHelpers.hpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Threading\TDisposalSafeThread.hpp">
+      <Filter>1_Common\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Threading\TThreadingHelpers.hpp">
+      <Filter>1_Common\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Threading\TMemoryAtomicOperationsHelpers.hpp">
+      <Filter>1_Common\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Time\TTimeHelpers.hpp">
+      <Filter>1_Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Time\TMultimediaTimerResolutionMillisecondsScope.hpp">
+      <Filter>1_Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Time\TDateTimeKeeperConfigurationHelpers.hpp">
+      <Filter>1_Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Time\TDateTimeKeeperConfiguration.hpp">
+      <Filter>1_Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Time\TDateTimeKeeper.hpp">
+      <Filter>1_Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\Math\TQuantityAndPrice.hpp">
+      <Filter>2_Finance\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ObjectModel\TDataSubscriptionBase.hpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TErrorHandler.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TErrorHandlingHelpers.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TErrorHandlerScope.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ControlFlow\TThreadedActivityCancellationToken.hpp">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SourceCodeModel\StdAfx.h">
+      <Filter>1_Common\SourceCodeModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SourceCodeModel\DecrementHeaderInclusionBalance.hpp">
+      <Filter>1_Common\SourceCodeModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SourceCodeModel\DecrementHeaderInclusionDepth.hpp">
+      <Filter>1_Common\SourceCodeModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SourceCodeModel\IncrementHeaderInclusionBalance.hpp">
+      <Filter>1_Common\SourceCodeModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SourceCodeModel\IncrementHeaderInclusionDepth.hpp">
+      <Filter>1_Common\SourceCodeModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TExceptionBase.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TFatalErrorException.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TCriticalErrorException.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TRegularErrorException.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ErrorHandling\TRecoverableErrorException.hpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.hpp" />
+    <ClInclude Include="Common\DataStructures\TDataBuffer.hpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\TStreamSocketWithDataBufferImpl.hpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\TStreamSocketWithDataBuffer.hpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TMultiplyWithCarryRandomNumberGenerator.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DataStructures\TDataStructuresHelpers.hpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Configuration\StdAfx.h">
+      <Filter>1_Common\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Configuration\TConfigurationHelpers.hpp">
+      <Filter>1_Common\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Globalization\StdAfx.h">
+      <Filter>1_Common\Globalization</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Globalization\TGlobalizationHelpers.hpp">
+      <Filter>1_Common\Globalization</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ObjectModel\TReferenceAtomicCounter.hpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ObjectModel\TReferenceCounterHelpers.hpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\TSocketNextDynamicPortNumberAdvancer.hpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfigurationHelpers.hpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfiguration.hpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGenerator.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGeneratorHelpers.hpp">
+      <Filter>1_Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\WarmUp\StdAfx.h">
+      <Filter>1_Common\WarmUp</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\WarmUp\TWarmUpHelpers.hpp">
+      <Filter>1_Common\WarmUp</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverBase.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverBaseConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverBaseConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverOutcomeCode.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverFactoryConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverFactory.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverFactoryConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverTypeCode.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TTcpRequestConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TTcpRequestConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBase.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNewsHubHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\1_NewsHub</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPetroleumStatusReportDownloaderConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPetroleumStatusReportDownloaderConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPetroleumStatusReportDownloader.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNaturalGasStorageReportDownloaderConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNaturalGasStorageReportDownloaderConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNaturalGasStorageReportDownloader.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SourceCodeModel\SourceFooter.hpp">
+      <Filter>1_Common\SourceCodeModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaTcpBase.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfiguration.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNewsHubEconomicIndicatorReceiver.hpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\TInstrumentBaseConfiguration.hpp">
+      <Filter>2_Finance</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\TInstrumentBase.hpp">
+      <Filter>2_Finance</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\TInstrumentDataSubscriptionBase.hpp">
+      <Filter>2_Finance</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentTradeSubscriptionBase.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentTradeSubscription.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentTrade.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscriptionBase.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscription.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteItemsBitMask.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuote.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\MarketData\TInstrumentAggregatedQuote.hpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\Trading\TPositionDirectionCode.hpp">
+      <Filter>2_Finance\Trading</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TAccountInfoContainer.hpp">
+      <Filter>004_RApiFacade\2_Uncategorized</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TAccountInfoConfigurationHelpers.hpp">
+      <Filter>004_RApiFacade\2_Uncategorized</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TAccountInfoConfiguration.hpp">
+      <Filter>004_RApiFacade\2_Uncategorized</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TInstrumentConfiguration.hpp">
+      <Filter>004_RApiFacade\3_Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TInstrumentConfigurationHelpers.hpp">
+      <Filter>004_RApiFacade\3_Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TInstrumentBestAggregatedBidAskQuoteSubscription.hpp">
+      <Filter>004_RApiFacade\4_MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TInstrumentTradeSubscription.hpp">
+      <Filter>004_RApiFacade\4_MarketData</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TLogInParamsConfiguration.hpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TLogInParamsConfigurationHelpers.hpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TREngineAdapterConfiguration.hpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TREngineAdapterConfigurationHelpers.hpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TREngineParamsConfiguration.hpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TREngineParamsConfigurationHelpers.hpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TInstrument.hpp">
+      <Filter>004_RApiFacade\3_Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TOrderTimeInForceCode.hpp">
+      <Filter>004_RApiFacade\005_Trading\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TOrderModificationRequestStateCode.hpp">
+      <Filter>004_RApiFacade\005_Trading\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TSingleInstrumentOrderModificationRequest.hpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TSingleInstrumentOrder.hpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TOrderStateBitMask.hpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TSingleInstrumentOrderHelpers.hpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TFileSystemCacheFlusher.hpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TFileSystemCacheFlusherConfiguration.hpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TFileSystemCacheFlusherConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNumberEventsCheapMovingAverageCalculator.hpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfiguration.hpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\Trading\TSingleInstrumentOrderBase.hpp">
+      <Filter>2_Finance\Trading</Filter>
+    </ClInclude>
+    <ClInclude Include="Finance\Trading\TOrderModificationRequestBase.hpp">
+      <Filter>2_Finance\Trading</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerConfiguration.hpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerMessageSenderConfiguration.hpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerMessageSenderConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerMessageSender.hpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdpWithDatagramCircularQueue.hpp">
+      <Filter>0005_Prototype52\0014_Peer\7_EconomicReportReceiverViaUdpWithDatagramCircularQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdp.hpp">
+      <Filter>0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategy.hpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__22</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPreEntryOrdersSendingProtectionConfiguration.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPreEntryOrdersSendingProtectionConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyPositionConfiguration.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyPositionConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyPositionConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyPositionConfiguration.hpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategy.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__22</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerStrategyBaseConfiguration.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__21</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerStrategyBase.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__22</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyConfiguration.hpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__21</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyConfiguration.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__21</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerStrategyBaseConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__1</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__1</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__1</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00000_Old_Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategy.hpp">
+      <Filter>0005_Prototype52\00000_Old_Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TTradingSystemConfiguration.hpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TApplication.hpp">
+      <Filter>0005_Prototype52\0033_Application\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TApplicationConfiguration.hpp">
+      <Filter>0005_Prototype52\0033_Application\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TApplicationConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0033_Application\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TTradingSystemConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TTradingSystem.hpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TTradingSystemHelpers.hpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyTypeCode.hpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyFactoryConfiguration.hpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyFactoryConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyFactory.hpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyBase.hpp">
+      <Filter>0005_Prototype52\0021_StrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyBaseConfiguration.hpp">
+      <Filter>0005_Prototype52\0021_StrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TStrategyBaseConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0021_StrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TUntradableConditionConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TUntradableConditionConfiguration.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TPeerStrategyBaseModeCode.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TOrderRequestRedundantSendingConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TOrderRequestRedundantSendingConfiguration.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TRApiHelpers.hpp">
+      <Filter>004_RApiFacade\001_RApiHelpers\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TREngineAdapter.hpp">
+      <Filter>004_RApiFacade\007_REngineAdapter\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TWarmUpStrategy.hpp">
+      <Filter>0005_Prototype52\0022_WarmUpStrategy\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TWarmUpStrategyConfiguration.hpp">
+      <Filter>0005_Prototype52\0022_WarmUpStrategy\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TWarmUpStrategyConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0022_WarmUpStrategy\__3</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdpConfiguration.hpp">
+      <Filter>0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__6</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdpConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__6</Filter>
+    </ClInclude>
+    <ClInclude Include="RApiFacade\TOrderTypeCode.hpp">
+      <Filter>004_RApiFacade\005_Trading\__6</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEntryOrderConfiguration.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__4</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype52\TEntryOrderConfigurationHelpers.hpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__4</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Common\CodeOptimization\TCodeOptimizationHelpers.cpp">
+      <Filter>1_Common\CodeOptimization</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ConditionValidation\TConditionValidationHelpers.cpp">
+      <Filter>1_Common\ConditionValidation</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DataFormatting\TDataFormattingHelpers.cpp">
+      <Filter>1_Common\DataFormatting</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Diagnostics\TDiagnosticsHelpers.cpp">
+      <Filter>1_Common\Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Processes\TProcessHelpers.cpp">
+      <Filter>1_Common\Processes</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ControlFlow\TControlFlowHelpers.cpp">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ControlFlow\TOperationCancelledException.cpp">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TCheapMovingAverageCalculatorConfigurationHelpers.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TCheapMovingAverageCalculatorConfiguration.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TCheapMovingAverageCalculator.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TMathHelpers.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Networking\TNetworkingHelpers.cpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ObjectModel\TObjectModelHelpers.cpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Threading\TDisposalSafeThread.cpp">
+      <Filter>1_Common\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Threading\TThreadingHelpers.cpp">
+      <Filter>1_Common\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Threading\TMemoryAtomicOperationsHelpers.cpp">
+      <Filter>1_Common\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Time\TTimeHelpers.cpp">
+      <Filter>1_Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Time\TMultimediaTimerResolutionMillisecondsScope.cpp">
+      <Filter>1_Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Time\TDateTimeKeeperConfigurationHelpers.cpp">
+      <Filter>1_Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Time\TDateTimeKeeperConfiguration.cpp">
+      <Filter>1_Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Time\TDateTimeKeeper.cpp">
+      <Filter>1_Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\Math\TQuantityAndPrice.cpp">
+      <Filter>2_Finance\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ObjectModel\TDataSubscriptionBase.cpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TErrorHandler.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TErrorHandlingHelpers.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TErrorHandlerScope.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ControlFlow\TThreadedActivityCancellationToken.cpp">
+      <Filter>1_Common\ControlFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DataStructures\TUnionPair.cpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DataStructures\TPair.cpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\CodeOptimization\Macros.cpp">
+      <Filter>1_Common\CodeOptimization</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Diagnostics\Macros.cpp">
+      <Filter>1_Common\Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TExceptionBase.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TFatalErrorException.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TCriticalErrorException.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TRegularErrorException.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ErrorHandling\TRecoverableErrorException.cpp">
+      <Filter>1_Common\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DataStructures\TDataBuffer.cpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Networking\TStreamSocketWithDataBufferImpl.cpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Networking\TStreamSocketWithDataBuffer.cpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TMultiplyWithCarryRandomNumberGenerator.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DataStructures\TDataStructuresHelpers.cpp">
+      <Filter>1_Common\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Configuration\TConfigurationHelpers.cpp">
+      <Filter>1_Common\Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Globalization\TGlobalizationHelpers.cpp">
+      <Filter>1_Common\Globalization</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ObjectModel\TReferenceAtomicCounter.cpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ObjectModel\TReferenceCounterHelpers.cpp">
+      <Filter>1_Common\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Networking\TSocketNextDynamicPortNumberAdvancer.cpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfiguration.cpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfigurationHelpers.cpp">
+      <Filter>1_Common\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGenerator.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGeneratorHelpers.cpp">
+      <Filter>1_Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\WarmUp\TWarmUpHelpers.cpp">
+      <Filter>1_Common\WarmUp</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverBase.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverBaseConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverBaseConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverOutcomeCode.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\2_EconomicReportReceiverBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverFactoryConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverFactory.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverFactoryConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverTypeCode.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\9_EconomicReportReceiverFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TTcpRequestConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TTcpRequestConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBase.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\3_EconomicReportDownloaderWithTcpParallelRequestsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNewsHubHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\1_NewsHub</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPetroleumStatusReportDownloaderConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPetroleumStatusReportDownloaderConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPetroleumStatusReportDownloader.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\5_PetroleumStatusReportDownloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNaturalGasStorageReportDownloaderConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNaturalGasStorageReportDownloaderConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNaturalGasStorageReportDownloader.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\4_NaturalGasStorageReportDownloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaTcpBase.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\6_EconomicReportReceiverViaTcpBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfiguration.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNewsHubEconomicIndicatorReceiver.cpp">
+      <Filter>0005_Prototype52\13_EconomicReportReceiver\7_TNewsHubEconomicIndicatorReceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\TInstrumentBaseConfiguration.cpp">
+      <Filter>2_Finance</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\TInstrumentBase.cpp">
+      <Filter>2_Finance</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\TInstrumentDataSubscriptionBase.cpp">
+      <Filter>2_Finance</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentTradeSubscriptionBase.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentTradeSubscription.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentTrade.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscriptionBase.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscription.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteItemsBitMask.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuote.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\MarketData\TInstrumentAggregatedQuote.cpp">
+      <Filter>2_Finance\MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\Trading\TPositionDirectionCode.cpp">
+      <Filter>2_Finance\Trading</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TAccountInfoContainer.cpp">
+      <Filter>004_RApiFacade\2_Uncategorized</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TAccountInfoConfigurationHelpers.cpp">
+      <Filter>004_RApiFacade\2_Uncategorized</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TAccountInfoConfiguration.cpp">
+      <Filter>004_RApiFacade\2_Uncategorized</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TInstrumentConfiguration.cpp">
+      <Filter>004_RApiFacade\3_Instrument</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TInstrumentConfigurationHelpers.cpp">
+      <Filter>004_RApiFacade\3_Instrument</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TInstrumentBestAggregatedBidAskQuoteSubscription.cpp">
+      <Filter>004_RApiFacade\4_MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TInstrumentTradeSubscription.cpp">
+      <Filter>004_RApiFacade\4_MarketData</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TLogInParamsConfiguration.cpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TLogInParamsConfigurationHelpers.cpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TREngineAdapterConfiguration.cpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TREngineAdapterConfigurationHelpers.cpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TREngineParamsConfiguration.cpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TREngineParamsConfigurationHelpers.cpp">
+      <Filter>004_RApiFacade\6_REngineAdapterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TInstrument.cpp">
+      <Filter>004_RApiFacade\3_Instrument</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TOrderTimeInForceCode.cpp">
+      <Filter>004_RApiFacade\005_Trading\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TOrderModificationRequestStateCode.cpp">
+      <Filter>004_RApiFacade\005_Trading\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TSingleInstrumentOrderModificationRequest.cpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TSingleInstrumentOrder.cpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TOrderStateBitMask.cpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TSingleInstrumentOrderHelpers.cpp">
+      <Filter>004_RApiFacade\005_Trading\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TFileSystemCacheFlusher.cpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TFileSystemCacheFlusherConfiguration.cpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TFileSystemCacheFlusherConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNumberEventsCheapMovingAverageCalculator.cpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfiguration.cpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\12_Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\Trading\TSingleInstrumentOrderBase.cpp">
+      <Filter>2_Finance\Trading</Filter>
+    </ClCompile>
+    <ClCompile Include="Finance\Trading\TOrderModificationRequestBase.cpp">
+      <Filter>2_Finance\Trading</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerConfiguration.cpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerMessageSenderConfiguration.cpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerMessageSenderConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerMessageSender.cpp">
+      <Filter>0005_Prototype52\0014_Peer\005_PeerMessageSender\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdpWithDatagramCircularQueue.cpp">
+      <Filter>0005_Prototype52\0014_Peer\7_EconomicReportReceiverViaUdpWithDatagramCircularQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdp.cpp">
+      <Filter>0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategy.cpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__22</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPreEntryOrdersSendingProtectionConfiguration.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPreEntryOrdersSendingProtectionConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyPositionConfiguration.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyPositionConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyPositionConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyPositionConfiguration.cpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategy.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__22</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerStrategyBaseConfiguration.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__21</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerStrategyBase.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__22</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyConfiguration.cpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__21</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyConfiguration.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__21</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerStrategyBaseConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__1</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00026_SecondaryPeerStrategy\__1</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00027_PrimaryPeerStrategy\__1</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00000_Old_Strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategy.cpp">
+      <Filter>0005_Prototype52\00000_Old_Strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TTradingSystemConfiguration.cpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TApplication.cpp">
+      <Filter>0005_Prototype52\0033_Application\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TApplicationConfiguration.cpp">
+      <Filter>0005_Prototype52\0033_Application\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TApplicationConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0033_Application\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TTradingSystemConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TTradingSystem.cpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TTradingSystemHelpers.cpp">
+      <Filter>0005_Prototype52\0032_TradingSystem\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyTypeCode.cpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyFactoryConfiguration.cpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyFactoryConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyFactory.cpp">
+      <Filter>0005_Prototype52\0031_StrategyFactory\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyBase.cpp">
+      <Filter>0005_Prototype52\0021_StrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyBaseConfiguration.cpp">
+      <Filter>0005_Prototype52\0021_StrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TStrategyBaseConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0021_StrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TUntradableConditionConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TUntradableConditionConfiguration.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TPeerStrategyBaseModeCode.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TOrderRequestRedundantSendingConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TOrderRequestRedundantSendingConfiguration.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__5</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TRApiHelpers.cpp">
+      <Filter>004_RApiFacade\001_RApiHelpers\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TREngineAdapter.cpp">
+      <Filter>004_RApiFacade\007_REngineAdapter\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TWarmUpStrategy.cpp">
+      <Filter>0005_Prototype52\0022_WarmUpStrategy\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TWarmUpStrategyConfiguration.cpp">
+      <Filter>0005_Prototype52\0022_WarmUpStrategy\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TWarmUpStrategyConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0022_WarmUpStrategy\__3</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdpConfiguration.cpp">
+      <Filter>0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__6</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdpConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\0014_Peer\006_EconomicReportReceiverViaUdp\__6</Filter>
+    </ClCompile>
+    <ClCompile Include="RApiFacade\TOrderTypeCode.cpp">
+      <Filter>004_RApiFacade\005_Trading\__6</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEntryOrderConfiguration.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__4</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEntryOrderConfigurationHelpers.cpp">
+      <Filter>0005_Prototype52\00025_PeerStrategyBase\__4</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Finance\ObjectModel\_ReadMe.txt">
+      <Filter>2_Finance\ObjectModel</Filter>
+    </None>
+    <None Include="..\..\Work\Prototype52\Prototype52_PetroleumStatusReportDownloader_Demo_Test_AnyComputer.xml">
+      <Filter>8__Work\Prototype52</Filter>
+    </None>
+    <None Include="..\..\Work\Prototype52\Prototype52_NaturalGasStorageReportDownloader_Demo_Test_AnyComputer.xml">
+      <Filter>8__Work\Prototype52</Filter>
+    </None>
+    <None Include="..\..\Work\Prototype52\Prototype52_NewsHubEconomicIndicatorReceiver_ES_Demo_Test_AnyComputer.xml">
+      <Filter>8__Work\Prototype52</Filter>
+    </None>
+  </ItemGroup>
+</Project>

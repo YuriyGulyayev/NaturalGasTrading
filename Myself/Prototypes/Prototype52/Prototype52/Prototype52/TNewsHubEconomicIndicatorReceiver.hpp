@@ -1,0 +1,240 @@
+#pragma once
+
+#include "./TNewsHubHelpers.hpp"
+#include "./TEconomicReportReceiverViaTcpBase.hpp"
+#include "./TNewsHubEconomicIndicatorReceiverConfiguration.hpp"
+
+#include "../Common/SourceCodeModel/IncrementHeaderInclusionBalance.hpp"
+
+namespace Prototype52
+{
+   // Visible universe.
+   //    {::_atof_l}.
+   //       Call.
+   //    {::Common::Networking::TNetworkingHelpers}.
+   //    {::Common::Math::TMathHelpers}.
+   //    {::Common::WarmUp::TWarmUpHelpers}.
+   //    {TNewsHubHelpers}.
+   //    {TEconomicReportReceiverViaTcpBase< int >}.
+   //       Subclass.
+   //    {TNewsHubEconomicIndicatorReceiverConfiguration}.
+   //    {PeerStrategyBaseModeCode_}.
+   //       Use.
+   //    {Result}.
+   //       Use, update.
+   //    {EconomicReportReceptionTimeStampMilliseconds_}.
+   //       Update.
+   //    {OutcomeCode_}.
+   //       Use, update.
+   //    {WarmUp} -- base.
+   //       Override, call.
+   //    {SafeGetEconomicReportReceptionDateTimeStampOffsetMilliseconds()}.
+   //       Use.
+   //    {Socket_}.
+   //       Call its methods.
+   //    {SocketStateIsValid_}.
+   //       Use, update.
+   //    {SocketDataBufferParsingOffset_}.
+   //       Use, update.
+   //    Instance constructors -- base.
+   //       Hide, possibly implicitly. Call, possibly implicitly.
+   //    Instance destructor -- base.
+   //       Override, possibly implicitly. Call, possibly implicitly.
+   //    {Initialize} -- base.
+   //       Hide, call.
+   //    {Prepare} -- base.
+   //       Override, call.
+   //    {DoTryRun} -- base.
+   //       Override. call.
+   //    {ConfigureSocket} -- base.
+   //       Override, call.
+   //    {TrySendHeartBeatMessage} -- base.
+   //       Override (but don't call).
+   //    {TryParseReceivedData} -- base.
+   //       Implement.
+   //    {LogActivityReport} -- base.
+   //       Implement.
+
+   class TNewsHubEconomicIndicatorReceiver :
+      public TEconomicReportReceiverViaTcpBase< int >
+   {
+#if( /* {private SocketDataBufferInitialCapacity_}. */ 1 )
+
+      //
+      private: int SocketDataBufferInitialCapacity_;
+
+#endif
+#if( /* {private EconomicIndicatorIdAsString_}. */ 1 )
+
+      // We append a '|' to this.
+      // TODO 2 yg? This should be a {union} containing a {char[ sizeof( ::Poco::UInt64 ) ]} (up to 8 digits) and {::Poco::UInt64}.
+      // TODO 2 yg? We need to support a reception of multiple economic indicators, so we need a configutable collection of items,
+      // TODO 2 yg? each containing message type, such as "AV" or "RV", economic indicator ID, economic indicator value multiplier.
+      // TODO 2 yg? It will probably need to be a map keyed on message type concatenated with economic indicator ID
+      // TODO 2 yg? but that would limit economic indicator ID to 6 digits. Maybe only the 1st char of message type should be configurable
+      // TODO 2 yg? and the 2nd char would be required to be "V".
+      // TODO 2 yg? But linear search would probably be fast enough, especially if I order the collection correctly.
+      // TODO 2 yg? It might be OK to read EId from a message as a 64-bit integer assuming that we have at least 8 bytes
+      // TODO 2 yg? of readable memory starting at the EId position. But if we don't a memory access violation error will occur.
+      // TODO 2 yg? {Result} will be calculated as a sum of products, just like in {TPetroleumStatusReportDownloader}.
+      private: ::std::string EconomicIndicatorIdAsString_;
+
+#endif
+#if( /* {private EconomicIndicatorValueMultiplier_}. */ 1 )
+
+      //
+      private: double EconomicIndicatorValueMultiplier_;
+
+#endif
+
+#if( /* {private SocketDataBufferInitialCapacityMultiplier_}. */ 1 )
+
+      // Maximum capacity equals {SocketDataBufferInitialCapacity_ * SocketDataBufferInitialCapacityMultiplier_}.
+      // Maximum capacity can be exceeded by a little as we can append some strings to the buffer.
+      // yg? Consider renaming this to {SocketDataBufferCapacityMaxLimitFactor1_}.
+      private: static int const SocketDataBufferInitialCapacityMultiplier_ = 2;
+
+#endif
+
+#if( /* {private WarmUpCounter_}. */ 1 )
+
+      //
+      private: int WarmUpCounter_;
+
+#endif
+
+#if( /* {private ConstantString13AsArray_}. */ 1 )
+
+      //
+      private: static char const ConstantString13AsArray_[];
+
+      //
+      private: static void ConstantString13StaticAssertion();
+
+#endif
+#if( /* {private ConstantString13Length_}. */ 1 )
+
+      //
+      private: static int const ConstantString13Length_ = 36;
+
+#endif
+#if( /* {private ConstantStrings26AsArray_}. */ 1 )
+
+      //
+      private: static char const * const ConstantStrings26AsArray_[ 4U ];
+
+#endif
+#if( /* {private ConstantString26LengthAdjustment_}. */ 1 )
+
+      //
+      private: static int const ConstantString26LengthAdjustment_ = ( - 2 );
+
+#endif
+
+#if( /* {public} Instance default constructor. */ 1 )
+
+      //
+
+      public: explicit TNewsHubEconomicIndicatorReceiver();
+
+#endif
+#if( /* //{(private)} Instance copy constructor. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+#if( /* {public} Instance constructor. */ 1 )
+
+      //
+
+      public: explicit TNewsHubEconomicIndicatorReceiver
+         ( TNewsHubEconomicIndicatorReceiverConfiguration && configuration1
+         );
+
+#endif
+#if( /* {(public)} Instance destructor. */ 1 )
+
+      // Could be autogenerated.
+      // {virtual}.
+
+#endif
+#if( /* //{(private) operator =}. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+
+#if( /* {public Initialize}. */ 1 )
+
+      //
+
+      public: void Initialize
+         ( TNewsHubEconomicIndicatorReceiverConfiguration && configuration1
+         );
+
+#endif
+#if( /* {private DoInitialize}. */ 1 )
+
+      //
+
+      private: void DoInitialize
+         ( TNewsHubEconomicIndicatorReceiverConfiguration && configuration1
+         );
+
+#endif
+#if( /* {public Prepare}. */ 1 )
+
+      //
+
+      public: virtual void Prepare
+         ( ::Common::Time::TDateTimeKeeper const & dateTimeKeeper
+         ) override;
+
+#endif
+#if( /* {protected DoTryRun}. */ 1 )
+
+      //
+
+      protected: virtual /*bool*/ void DoTryRun() override;
+
+#endif
+
+#if( /* {protected WarmUp}. */ 1 )
+
+      //
+
+      protected: virtual void WarmUp() override;
+
+#endif
+
+#if( /* {protected ConfigureSocket}. */ 1 )
+
+      //
+
+      protected: virtual void ConfigureSocket() override;
+
+#endif
+#if( /* {protected TrySendHeartBeatMessage}. */ 1 )
+
+      //
+      
+      protected: virtual bool TrySendHeartBeatMessage() override;
+
+#endif
+#if( /* {protected TryParseReceivedData}. */ 1 )
+
+      //
+      
+      protected: virtual unsigned int TryParseReceivedData() override;
+
+#endif
+
+#if( /* {protected LogActivityReport}. */ 1 )
+
+      //
+      
+      protected: virtual void LogActivityReport() const override;
+
+#endif
+   };
+}

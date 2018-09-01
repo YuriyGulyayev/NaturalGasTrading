@@ -1,0 +1,1306 @@
+#pragma once
+
+#include "../Common/Threading/TDisposalSafeThread.hpp"
+#include "./TFileSystemCacheFlusher.hpp"
+#include "./TEconomicReportReceiverFactory.hpp"
+#include "./TPeerMessageSender.hpp"
+#include "./TEconomicReportReceiverViaUdp.hpp"
+#include "./TEconomicReportReceiverViaUdpWithDatagramCircularQueue.hpp"
+#include "./TStrategyBase.hpp"
+#include "./TPeerStrategyBaseConfiguration.hpp"
+
+#include "../Common/SourceCodeModel/IncrementHeaderInclusionBalance.hpp"
+
+namespace Prototype52
+{
+   // Not deriving from {private ::Poco::Runnable}
+   // because we have multiple threads and I don't want to make one of them look any "special".
+   //
+   // Visible universe.
+   //    {TStrategyBase}.
+   //       Subclass.
+   //    {TPeerStrategyBaseConfiguration}.
+   //    Instance constructors -- base.
+   //       Hide, possibly implicitly. Call, possibly implicitly.
+   //    Instance destructor -- base.
+   //       Override, possibly implicitly. Call, possibly implicitly.
+   //    {Initialize} -- base.
+   //       Hide, call.
+   //    //{Prepare} -- base.
+   //    //   Override, call.
+   //    //{Start} -- base.
+   //    //   Override, call.
+   //    {Run} -- base.
+   //       Implement.
+
+   class TPeerStrategyBase abstract :
+      public TStrategyBase
+   {
+// TODO Review and remove this. I already reviewed this but it's worth to repeat.
+#pragma region Garbage.
+#if( /* {protected TPlannedActionPeerMessageBitMask1_}. */ 0 )
+
+//      //
+//
+//      protected: enum TPlannedActionPeerMessageBitMask1_ : unsigned char
+//      {
+//         //
+//         TPlannedActionPeerMessageBitMask1_None_ = static_cast< unsigned char >( 0U ),
+//
+//         // yg? Maybe rename this to something like "market conditions are good" or "trading is allowed" but I don't like this idea.
+////TODO write a better comment?
+////TODO Reconsile or refer to comment for the same named method in the strategy.
+////TODO This factors:
+////TODO @ {TStrategy::NumberPendingOrdersWarmUpModificationRequest_}.
+//         TPlannedActionPeerMessageBitMask1_MayModifyEntryOrdersTowardsMoney_ = static_cast< unsigned char >( 1U << 0U )
+//      };
+
+#endif
+#if( /* {protected TPlannedActionPeerMessage_}. */ 0 )
+
+//   #if( ! ( defined( _MSC_VER ) && ( defined( _M_IX86 ) || defined( _M_X64 ) ) ) )
+//      #error yg?? Do we access unaligned data? Is it a problem?
+//   #endif
+//      static_assert( POCO_ARCH_LITTLE_ENDIAN == 1, "" );
+//      #pragma pack( push, 1 )
+//
+////TODO redo all this shit
+////TODO we need 2 pseudo-structs and a char-array of their max size.
+////TODO the bitmask will be at the end and it will be populated based on datagram size
+////TODO 8-byte fields will be at the beginning
+//
+//      // yg? Optimization idea:
+//      // yg? @ Eliminate {BitMask1}.
+//      // yg? @ Split this class into 2: 1 without the prices and another with.
+//      // yg? @ Use 2 separate message receivers.
+//
+//      protected: class TPlannedActionPeerMessage_
+//      {
+//   #if( /* {private CheckSumFactor1_}. */ 1 )
+//
+//         //
+//         private: static unsigned int const CheckSumFactor1_ = 0xAAA55A55U;
+//
+//   #endif
+////TODO remove
+////   #if( /* {private CheckSumFactor2_}. */ 1 )
+////
+////         //
+////         private: static unsigned int const CheckSumFactor2_ = 1U;
+////
+////   #endif
+//
+//   #if( /* {public CheckSum}. */ 1 )
+//
+//         //
+//         public: unsigned int CheckSum;
+//
+//   #endif
+//   #if( /* {public BitMask1}. */ 1 )
+//
+//         //
+//         public: TPlannedActionPeerMessageBitMask1_ BitMask1;
+//
+//   #endif
+//   #if( /* {public InstrumentBestBidPrice}. */ 1 )
+//
+//         // The prices are provided only when the {TPlannedActionPeerMessageBitMask1_MayModifyEntryOrdersTowardsMoney_} bit is 1.
+//         // yg? These fields are not aligned to 8.
+//         public: double InstrumentBestBidPrice;
+//
+//   #endif
+//   #if( /* {public InstrumentBestAskPrice}. */ 1 )
+//
+//         // yg? See {InstrumentBestBidPrice} comment.
+//         public: double InstrumentBestAskPrice;
+//
+//   #endif
+//   #if( /* {public InstrumentLastTradePrice}. */ 1 )
+//
+//         // yg? See {InstrumentBestBidPrice} comment.
+//         public: double InstrumentLastTradePrice;
+//
+//   #endif
+//   #if( /* {public Zero1}. */ 1 )
+//
+//         // This field ensures that the total size is a multiple of 4 -- to facilitate checksum calculation.
+//         // These equal 0.
+//         public: char Zero1[ 3U ];
+//
+//   #endif
+//
+//   #if( /* {public} Instance default constructor. */ 1 )
+//
+//         //
+//
+//         public: explicit TPlannedActionPeerMessage_();
+//
+//   #endif
+//   #if( /* {private} Instance copy constructor. */ 1 )
+//
+//         //
+//
+//         private: explicit TPlannedActionPeerMessage_
+//            ( TPlannedActionPeerMessage_ const & source
+//            );
+//
+//   #endif
+//   #if( /* {(public)} Instance destructor. */ 1 )
+//
+//         // Could be autogenerated.
+//
+//   #endif
+//   #if( /* {private operator =}. */ 1 )
+//
+//         //
+//
+//         private: TPlannedActionPeerMessage_ & operator =
+//            ( TPlannedActionPeerMessage_ const & source
+//            );
+//
+//   #endif
+//
+//   #if( /* {public CalculateCheckSum}. */ 1 )
+//
+//         //
+//
+//         public: unsigned int CalculateCheckSum() const;
+//
+//   #endif
+//   #if( /* {public UpdateCheckSum}. */ 1 )
+//
+//         //
+//
+//         public: void UpdateCheckSum();
+//
+//   #endif
+//
+//   #if( /* {public PrepareReceiveDatagram}. */ 1 )
+//
+//         //
+//
+//         public: void PrepareReceiveDatagram();
+//
+//   #endif
+//   #if( /* {public DatagramBuffer}. */ 1 )
+//
+//         //
+//
+////TODO Use this in the strategy too when sending the data
+//         public: char * DatagramBuffer();
+//
+//   #endif
+//   #if( /* {public DatagramBufferCapacity}. */ 1 )
+//
+//         //
+//
+//         public: int DatagramBufferCapacity() const;
+//
+//   #endif
+//   #if( /* {public DatagramBufferLength}. */ 1 )
+//
+//         //
+//
+////TODO use it in the strategy when sending data
+//         public: int DatagramBufferLength() const;
+//
+//   #endif
+//   #if( /* {public TryParseDatagramBuffer}. */ 1 )
+//
+//         //
+//
+//         public: bool TryParseDatagramBuffer
+//            ( int numberBytesReceived
+//            );
+//
+//   #endif
+//      };
+//
+//      #pragma pack( pop )
+
+#endif
+#pragma endregion
+
+
+#if( /* {protected TState1Code_}. */ 1 )
+
+      protected: enum TState1Code_ : int
+      {
+         //
+         TState1Code_None_,
+
+         ////
+         //TState1Code_Starting_,
+
+//TODO remove
+         ////
+         //TState1Code_PreparedActivitiesSchedule_,
+
+//TODO remove
+         ////
+         //TState1Code_FrozeActivitiesSchedule_,
+
+         // We set this code long before we actually try to receive economic report.
+         TState1Code_ReceivingEconomicReport_,
+      
+         // Neither primary nor secondary peer lets the others know that it failed to receive economic report directly.
+         // So this code can't be set based on a peer message.
+         // Note that under certain conditions the primary peer requests to cancel all/"any" orders
+         // after it fails to receive economic report directly and does let the others know about the cancellation but not what caused it.
+         // yg? Can we get by without this code? Let's keep it for now.
+         TState1Code_FailedReceiveEconomicReport_,
+      
+         // yg? I eliminated this and we now treat the "received but ignored" situation as if economic report is untradable
+         // yg? but I might need to revisit this some day.
+         // yg? The "received but ignored" concept might potentially be helpful to deduce report tradability
+         // yg? from the direction in which entry orders have been triggered and base some logic on that,
+         // yg? such as in what direction to send speculative exit orders. But that would be risky.
+         //TState1Code_ReceivedButIgnoredEconomicReport_,
+      
+         // This code indicates that we received economic report, directly or from a peer.
+         // If the untradable ranges are not configured the repot is treated as untradable.
+         TState1Code_ReceivedEconomicReport_,
+
+         ////
+         //TState1Code_Completed_,
+      };
+
+#endif
+#if( /* {protected TState2Code_}. */ 1 )
+
+      protected: enum TState2Code_ : int
+      {
+         //
+         TState2Code_None_,
+      
+         //
+         TState2Code_PreparingModifyEntryOrdersTowardsMoney_,
+
+         // When the time comes, a secondary peer sets this code assuming that the primary peer requested to modify
+         // entry and quick exit orders towards the money.
+         TState2Code_PreparingCancelEntryOrders_,
+
+         // Also cancelling 1 quick exit order while releasing the other one.
+         TState2Code_CancellingEntryOrders_,
+
+         // Also the quick exit order we would otherwise release is going to complete without any further action.
+         // This is implied for example if the order is being cancelled "when can" or it was modified to be released.
+         // This code is also set if a deep-out-of-the-money new order request gets immediatelly rejected.
+         TState2Code_CancellingAllOrders_,
+
+         ////
+         //TState2Code_Exiting_,
+
+         ////
+         //TState2Code_Completed_,
+      };
+
+#endif
+
+#if( /* {protected TOrdersPeerMessageBitMask1_}. */ 1 )
+
+      //
+
+      protected: enum TOrdersPeerMessageBitMask1_ : unsigned char
+      {
+         //
+         TOrdersPeerMessageBitMask1_None_ = static_cast< unsigned char >( 0U ),
+
+         // This matches {TPeerStrategyBase::RandomNumber1_}.
+         TOrdersPeerMessageBitMask1_RandomNumber1_ = static_cast< unsigned char >( 1U << 0U ),
+      };
+
+#endif
+#if( /* {protected TOrdersPeerMessagePseudoStructure_}. */ 1 )
+
+   #if( ! ( defined( _MSC_VER ) && ( defined( _M_IX86 ) || defined( _M_X64 ) ) ) )
+      #error yg?? Do we access unaligned data? Is it a problem?
+   #endif
+      static_assert( POCO_ARCH_LITTLE_ENDIAN == 1, "" );
+      #pragma pack( push, 1 )
+
+      // "Pseudo". Do not use this as is.
+      // We are happy with all the autogenerated methods and we don't need an instance move constructor or move assignment operator.
+
+      protected: class TOrdersPeerMessagePseudoStructure_
+      {
+   #if( /* {public CheckSum}. */ 1 )
+   
+         //
+         public: unsigned int CheckSum;
+   
+   #endif
+   #if( /* {public OrdersBrokerGeneratedId}. */ 1 )
+   
+         // Short entry orders, long entry orders, short quick exit order, long quick exit order.
+         // The number of items equals {( TPrimaryPeerStrategy::PositionConfiguration_.EntryOrdersConfiguration.size() + 1U ) * 2U}.
+         // Note that the {PositionConfiguration_} field also exists in {TSecondaryPeerStrategy}
+         // and shall contain the same number of orders.
+//TODO verify that the preceeding comment is correct.
+         // yg? I tried to make array length 0U and {union}ize it with the next field but array's actual size was like if its length was 1U.
+         public: int OrdersBrokerGeneratedId[ 1U ];
+   
+   #endif
+   #if( /* {public BitMask1}. */ 1 )
+   
+         //
+         public: TOrdersPeerMessageBitMask1_ BitMask1;
+
+   #endif
+   #if( /* {public Zero1}. */ 1 )
+   
+         // This field ensures that the total size is a multiple of 4 -- to facilitate checksum calculation.
+         // These shall be 0.
+         public: char Zero1[ 3U ];
+   
+   #endif
+      };
+
+      #pragma pack( pop )
+
+#endif
+#if( /* {protected TOrdersPeerMessage_}. */ 1 )
+
+      // See validations in {CalculateCheckSum}.
+
+//TODO Send this only in normal mode?
+      protected: class TOrdersPeerMessage_
+      {
+   #if( /* {private CheckSumFactor1_}. */ 1 )
+
+         //
+         private: static unsigned int const CheckSumFactor1_ = 0xAAA55A55U;
+
+   #endif
+//TODO remove
+   //#if( /* {private CheckSumFactor2_}. */ 1 )
+   //
+   //      //
+   //      private: static unsigned int const CheckSumFactor2_ = 1U;
+   //
+   //#endif
+
+   #if( /* {private DatagramBuffer_}. */ 1 )
+
+         //
+         
+         private: ::std::string DatagramBuffer_;
+
+   #endif
+
+   #if( /* {public} Instance default constructor. */ 1 )
+
+         //
+
+         public: explicit TOrdersPeerMessage_();
+
+   #endif
+   #if( /* {private} Instance copy constructor. */ 1 )
+
+         //
+
+         private: explicit TOrdersPeerMessage_
+            ( TOrdersPeerMessage_ const & source
+            );
+
+   #endif
+   #if( /* {(public)} Instance destructor. */ 1 )
+
+         // Could be autogenerated.
+
+   #endif
+   #if( /* {private operator =}. */ 1 )
+
+         //
+
+         private: TOrdersPeerMessage_ & operator =
+            ( TOrdersPeerMessage_ const & source
+            );
+
+   #endif
+
+   #if( /* {public CalculateCheckSum}. */ 1 )
+
+         //
+
+         public: unsigned int CalculateCheckSum() const;
+
+   #endif
+   #if( /* {public UpdateCheckSum}. */ 1 )
+
+         //
+
+         public: void UpdateCheckSum();
+
+   #endif
+
+   #if( /* {public AllocateDatagramBufferIfNeeded}. */ 1 )
+
+         //
+
+         public: void AllocateDatagramBufferIfNeeded
+            ( int numberEntryOrdersInEachDirection
+            );
+
+   #endif
+   #if( /* {public PrepareReceiveDatagram}. */ 1 )
+
+         //
+
+         public: void PrepareReceiveDatagram();
+
+   #endif
+   #if( /* {public DatagramBuffer}. */ 1 )
+
+         //
+
+//TODO Use this in the strategy too when sending the data
+         public: char * DatagramBuffer();
+
+   #endif
+   #if( /* {public DatagramBufferCapacity}. */ 1 )
+
+         //
+
+         public: int DatagramBufferCapacity() const;
+
+   #endif
+   #if( /* {public DatagramBufferLength}. */ 1 )
+
+         //
+
+//TODO use it in the strategy when sending data
+         public: int DatagramBufferLength() const;
+
+   #endif
+   #if( /* {public TryParseDatagramBuffer}. */ 1 )
+
+         //
+
+         public: bool TryParseDatagramBuffer
+            ( int numberBytesReceived
+            );
+
+   #endif
+      };
+
+#endif
+
+#if( /* {protected TPlannedAction1PeerMessage_}. */ 1 )
+
+   #if( ! ( defined( _MSC_VER ) && ( defined( _M_IX86 ) || defined( _M_X64 ) ) ) )
+      #error yg?? Do we access unaligned data? Is it a problem?
+   #endif
+      static_assert( POCO_ARCH_LITTLE_ENDIAN == 1, "" );
+      #pragma pack( push, 1 )
+
+      // This is sent when the "may modify" condition is {true}.
+      // TODO 3 yg? Messages can arrive in a different order, so we need a sequential {signed char Id} or at least just 1 bit
+      // TODO 3 yg? and process a message only if the difference between its ID and the last seen ID is positive.
+      // See validations in {CalculateCheckSum}.
+
+//TODO Send this only in normal mode?
+      protected: class TPlannedAction1PeerMessage_
+      {
+   #if( /* {private CheckSumFactor1_}. */ 1 )
+
+         //
+         private: static unsigned int const CheckSumFactor1_ = 0xAAA55A55U;
+
+   #endif
+//TODO remove
+   //#if( /* {private CheckSumFactor2_}. */ 1 )
+   //
+   //      //
+   //      private: static unsigned int const CheckSumFactor2_ = 1U;
+   //
+   //#endif
+
+   #if( /* {public InstrumentBestBidPrice}. */ 1 )
+
+         // Optimization idea: each price should be optional and provided the 1st time and then only if updated. But if a message gets lost,
+         // after the next message is processed the known prices can become inconsistent. We would need to at least check that
+         // {InstrumentBestBidPrice < InstrumentBestAskPrice}.
+         // Also note that the "may modify" condition often changes as a result of a price upate,
+         // so some prices would often need to be provided.
+         public: double InstrumentBestBidPrice;
+   
+   #endif
+   #if( /* {public InstrumentBestAskPrice}. */ 1 )
+   
+         //
+         public: double InstrumentBestAskPrice;
+   
+   #endif
+   #if( /* {public InstrumentLastTradePrice}. */ 1 )
+   
+         //
+         public: double InstrumentLastTradePrice;
+   
+   #endif
+   #if( /* {public CheckSum}. */ 1 )
+   
+         //
+         public: unsigned int CheckSum;
+   
+   #endif
+
+   #if( /* {public} Instance default constructor. */ 1 )
+
+         //
+
+         public: explicit TPlannedAction1PeerMessage_();
+
+   #endif
+   #if( /* {private} Instance copy constructor. */ 1 )
+
+         //
+
+         private: explicit TPlannedAction1PeerMessage_
+            ( TPlannedAction1PeerMessage_ const & source
+            );
+
+   #endif
+   #if( /* {(public)} Instance destructor. */ 1 )
+
+         // Could be autogenerated.
+
+   #endif
+   #if( /* {private operator =}. */ 1 )
+
+         //
+
+         private: TPlannedAction1PeerMessage_ & operator =
+            ( TPlannedAction1PeerMessage_ const & source
+            );
+
+   #endif
+
+   #if( /* {public CalculateCheckSum}. */ 1 )
+
+         //
+
+         public: unsigned int CalculateCheckSum() const;
+
+   #endif
+   #if( /* {public UpdateCheckSum}. */ 1 )
+
+         //
+
+         public: void UpdateCheckSum();
+
+   #endif
+
+   #if( /* {public PrepareReceiveDatagram}. */ 1 )
+
+         //
+
+         public: void PrepareReceiveDatagram();
+
+   #endif
+   #if( /* {public DatagramBuffer}. */ 1 )
+
+         //
+
+//TODO Use this in the strategy too when sending the data
+         public: char * DatagramBuffer();
+
+   #endif
+   #if( /* {public DatagramBufferCapacity}. */ 1 )
+
+         //
+
+         public: int DatagramBufferCapacity() const;
+
+   #endif
+   #if( /* {public DatagramBufferLength}. */ 1 )
+
+         //
+
+//TODO use it in the strategy when sending data
+         public: int DatagramBufferLength() const;
+
+   #endif
+   #if( /* {public TryParseDatagramBuffer}. */ 1 )
+
+         //
+
+         public: bool TryParseDatagramBuffer
+            ( int numberBytesReceived
+            );
+
+   #endif
+      };
+
+      #pragma pack( pop )
+
+#endif
+#if( /* {protected TPlannedAction2PeerMessage_}. */ 1 )
+
+   #if( ! ( defined( _MSC_VER ) && ( defined( _M_IX86 ) || defined( _M_X64 ) ) ) )
+      #error yg?? Do we access unaligned data? Is it a problem?
+   #endif
+      static_assert( POCO_ARCH_LITTLE_ENDIAN == 1, "" );
+      #pragma pack( push, 1 )
+
+      // This is sent when the "may modify" condition is {false}.
+      // See validations in {CalculateCheckSum}.
+      // See {TPlannedAction1PeerMessage_} comment.
+
+//TODO Send this only in normal mode?
+      protected: class TPlannedAction2PeerMessage_
+      {
+   #if( /* {private CheckSumFactor1_}. */ 1 )
+
+         //
+         private: static unsigned int const CheckSumFactor1_ = 0xAAA55A55U;
+
+   #endif
+//TODO remove
+   //#if( /* {private CheckSumFactor2_}. */ 1 )
+   //
+   //      //
+   //      private: static unsigned int const CheckSumFactor2_ = 1U;
+   //
+   //#endif
+
+   #if( /* {public CheckSum}. */ 1 )
+   
+         //
+         public: unsigned int CheckSum;
+   
+   #endif
+
+   #if( /* {public} Instance default constructor. */ 1 )
+
+         //
+
+         public: explicit TPlannedAction2PeerMessage_();
+
+   #endif
+   #if( /* {private} Instance copy constructor. */ 1 )
+
+         //
+
+         private: explicit TPlannedAction2PeerMessage_
+            ( TPlannedAction2PeerMessage_ const & source
+            );
+
+   #endif
+   #if( /* {(public)} Instance destructor. */ 1 )
+
+         // Could be autogenerated.
+
+   #endif
+   #if( /* {private operator =}. */ 1 )
+
+         //
+
+         private: TPlannedAction2PeerMessage_ & operator =
+            ( TPlannedAction2PeerMessage_ const & source
+            );
+
+   #endif
+
+   #if( /* {public CalculateCheckSum}. */ 1 )
+
+         //
+
+         public: unsigned int CalculateCheckSum() const;
+
+   #endif
+   #if( /* {public UpdateCheckSum}. */ 1 )
+
+         //
+
+         public: void UpdateCheckSum();
+
+   #endif
+
+   #if( /* {public PrepareReceiveDatagram}. */ 1 )
+
+         //
+
+         public: void PrepareReceiveDatagram();
+
+   #endif
+   #if( /* {public DatagramBuffer}. */ 1 )
+
+         //
+
+//TODO Use this in the strategy too when sending the data
+         public: char * DatagramBuffer();
+
+   #endif
+   #if( /* {public DatagramBufferCapacity}. */ 1 )
+
+         //
+
+         public: int DatagramBufferCapacity() const;
+
+   #endif
+   #if( /* {public DatagramBufferLength}. */ 1 )
+
+         //
+
+//TODO use it in the strategy when sending data
+         public: int DatagramBufferLength() const;
+
+   #endif
+   #if( /* {public TryParseDatagramBuffer}. */ 1 )
+
+         //
+
+         public: bool TryParseDatagramBuffer
+            ( int numberBytesReceived
+            );
+
+   #endif
+      };
+
+      #pragma pack( pop )
+
+#endif
+
+#if( /* {protected TPeerStatePeerMessageBitMask1_}. */ 1 )
+
+      //
+
+      protected: enum TPeerStatePeerMessageBitMask1_ : unsigned short
+      {
+         //
+         TPeerStatePeerMessageBitMask1_None_ = static_cast< unsigned short >( 0U ),
+
+         // This occupies the lower order 3 bits.
+         // Possible values:
+         // * 0 if economic report hasn't arrived yet or its reception failed.
+         // * 1 is reserved for the "received but ignored" case.
+         // * 2 to 6 is when the actual value is -2 to 2.
+         // yg? Magic numbers hardcoded.
+         TPeerStatePeerMessageBitMask1_PositionExpectedDirectionCode_ =
+            static_cast< unsigned short >( ( 1U << 0U ) | ( 1U << 1U ) | ( 1U << 2U ) ),
+
+         //
+         TPeerStatePeerMessageBitMask1_IsWarmUp_ = static_cast< unsigned short >( 1U << 3U ),
+
+         // This indicates that {TPeerStrategyBase::State2Code_ == TState2Code_CancellingAllOrders_}.
+         // Otherwise it's implied that {TPeerStrategyBase::State2Code_ == TState2Code_CancellingEntryOrders_}.
+         TPeerStatePeerMessageBitMask1_CancellingAllOrders_ = static_cast< unsigned short >( 1U << 4U ),
+
+         // This indicates that this particular peer originally (not redundantly) requested
+         // to release a quick exit order right before sending this message.
+         // When a peer requests to release an order it's not supposed to also request to cancel it,
+         // which imposes obvious constraints on the values of these bits.
+// TODO Am I happy with using the word "release"?
+         TPeerStatePeerMessageBitMask1_OriginallyRequestedReleaseQuickExitOrder_ = static_cast< unsigned short >( 1U << 5U ),
+
+         //
+         TPeerStatePeerMessageBitMask1_RedundantlyRequestedReleaseQuickExitOrder_ = static_cast< unsigned short >( 1U << 6U ),
+
+         // This indicates that this particular peer originally (not redundantly) requested
+         // to cancel a quick exit order right before sending this message.
+         TPeerStatePeerMessageBitMask1_OriginallyRequestedCancelQuickExitOrder_ = static_cast< unsigned short >( 1U << 7U ),
+
+         // This indicates that this particular peer originally (not redundantly) requested
+         // to cancel entry orders and the other quick exit order right before sending this message.
+         // The {TPeerStatePeerMessageBitMask1_OriginallyRequestedCancelQuickExitOrder_} and
+         // {TPeerStatePeerMessageBitMask1_OriginallyRequestedCancelEntryOrders_} bits together indicate
+         // that the peer requested to cancel all or "any" orders.
+//TODO do we care if all or "any"? Can we deduce this?
+         TPeerStatePeerMessageBitMask1_OriginallyRequestedCancelEntryOrders_ = static_cast< unsigned short >( 1U << 8U ),
+      };
+
+#endif
+#if( /* {protected TPeerStatePeerMessage_}. */ 1 )
+
+   #if( ! ( defined( _MSC_VER ) && ( defined( _M_IX86 ) || defined( _M_X64 ) ) ) )
+      #error yg?? Do we access unaligned data? Is it a problem?
+   #endif
+      static_assert( POCO_ARCH_LITTLE_ENDIAN == 1, "" );
+      #pragma pack( push, 1 )
+
+      // See validations in {CalculateCheckSum}.
+
+      protected: class TPeerStatePeerMessage_
+      {
+   #if( /* {private CheckSumFactor1_}. */ 1 )
+
+         //
+         private: static unsigned int const CheckSumFactor1_ = 0xAAA55A55U;
+
+   #endif
+//TODO remove
+   //#if( /* {private CheckSumFactor2_}. */ 1 )
+   //
+   //      //
+   //      private: static unsigned int const CheckSumFactor2_ = 1U;
+   //
+   //#endif
+
+   #if( /* {public CheckSum}. */ 1 )
+   
+         //
+         public: unsigned int CheckSum;
+   
+   #endif
+   #if( /* {public BitMask1}. */ 1 )
+   
+         //
+         public: TPeerStatePeerMessageBitMask1_ BitMask1;
+   
+   #endif
+   #if( /* {public PeerId}. */ 1 )
+   
+         //
+         public: char PeerId;
+   
+   #endif
+   #if( /* {public Zero1}. */ 1 )
+   
+         // This field ensures that the total size is a multiple of 4 -- to facilitate checksum calculation.
+         // These shall be 0.
+         public: char Zero1[ 1U ];
+   
+   #endif
+
+   #if( /* {public} Instance default constructor. */ 1 )
+
+         //
+
+         public: explicit TPeerStatePeerMessage_();
+
+   #endif
+   #if( /* {private} Instance copy constructor. */ 1 )
+
+         //
+
+         private: explicit TPeerStatePeerMessage_
+            ( TPeerStatePeerMessage_ const & source
+            );
+
+   #endif
+   #if( /* {(public)} Instance destructor. */ 1 )
+
+         // Could be autogenerated.
+
+   #endif
+   #if( /* {private operator =}. */ 1 )
+
+         //
+
+         private: TPeerStatePeerMessage_ & operator =
+            ( TPeerStatePeerMessage_ const & source
+            );
+
+   #endif
+
+   #if( /* {public CalculateCheckSum}. */ 1 )
+
+         //
+
+         public: unsigned int CalculateCheckSum() const;
+
+   #endif
+   #if( /* {public UpdateCheckSum}. */ 1 )
+
+         //
+
+         public: void UpdateCheckSum();
+
+   #endif
+
+   #if( /* {public PrepareReceiveDatagram}. */ 1 )
+
+         //
+
+         public: void PrepareReceiveDatagram();
+
+   #endif
+   #if( /* {public DatagramBuffer}. */ 1 )
+
+         //
+
+//TODO Use this in the strategy too when sending the data
+         public: char * DatagramBuffer();
+
+   #endif
+   #if( /* {public DatagramBufferCapacity}. */ 1 )
+
+         //
+
+         public: int DatagramBufferCapacity() const;
+
+   #endif
+   #if( /* {public DatagramBufferLength}. */ 1 )
+
+         //
+
+//TODO use it in the strategy when sending data
+         public: int DatagramBufferLength() const;
+
+   #endif
+   #if( /* {public TryParseDatagramBuffer}. */ 1 )
+
+         //
+
+         public: bool TryParseDatagramBuffer
+            ( int numberBytesReceived
+            );
+
+   #endif
+      };
+
+      #pragma pack( pop )
+
+#endif
+
+//TODO private ==> protected
+//TODO some belong to primary strategy only
+#if( /* {private ModeCode_}. */ 1 )
+
+      //
+      private: TPeerStrategyBaseModeCode ModeCode_;
+
+#endif
+#if( /* {private EconomicReportReleaseTimeOfDayMilliseconds_}. */ 1 )
+
+      // yg? Consider using the word "scheduled".
+      private: int EconomicReportReleaseTimeOfDayMilliseconds_;
+
+#endif
+#if( /* {private EconomicReportReleaseDateTimeTestOffsetMilliseconds_}. */ 1 )
+
+      // yg? Consider using the word "in test mode".
+//TODO {EconomicReportReleaseDateTimeOffsetInTestModeMilliseconds_} or {EconomicReportReleaseDateTimeOffsetMillisecondsInTestMode_}
+//TODO also in config
+      private: int EconomicReportReleaseDateTimeTestOffsetMilliseconds_;
+
+#endif
+#if( /* {private FileSystemCacheFlushing1TimeOffsetTimer1Ticks_}. */ 1 )
+
+      // Forced to be { < FileSystemCacheFlushing2TimeOffsetTimer1Ticks_ }.
+      private: int FileSystemCacheFlushing1TimeOffsetTimer1Ticks_;
+
+#endif
+#if( /* {private FileSystemCacheFlushing2TimeOffsetTimer1Ticks_}. */ 1 )
+
+      // In the configuration, this parameter is relative to the report release time but this value is relative to the entry order modification time.
+      // Forced to be { < 0 }.
+      private: int FileSystemCacheFlushing2TimeOffsetTimer1Ticks_;
+
+#endif
+#if( /* {private PeerMessageSendingWarmUp1TimeOffsetTimer1Ticks_}. */ 1 )
+
+      // Forced to be { < PeerMessageSendingWarmUp2TimeOffsetTimer1Ticks_ }.
+// TODO Forced to be { < PeerMessageSendingWarmUp2TimeOffsetTimer1Ticks_ - 1 } because this is used to send ... .
+//TODO Should this be configured relative to the entry order modification time? Maybe not.
+// TODO Send newshub msg 1 timer tick before. Reflect in comment in config.
+      private: int PeerMessageSendingWarmUp1TimeOffsetTimer1Ticks_;
+
+#endif
+#if( /* {private PeerMessageSendingWarmUp2TimeOffsetTimer1Ticks_}. */ 1 )
+
+      // In the configuration, this parameter is relative to the report release time but this value is relative to the entry order modification time.
+      // Forced to be { < 0 }.
+      private: int PeerMessageSendingWarmUp2TimeOffsetTimer1Ticks_;
+
+#endif
+#if( /* {private EntryOrdersModificationTimeOffsetMilliseconds_}. */ 1 )
+
+      // This is a {double}.
+      // yg? Consider using the word "towards the money".
+//TODO explain the difference in primary and secondary peer
+      private: double EntryOrdersModificationTimeOffsetMilliseconds_;
+
+#endif
+#if( /* {private TerminationTimeOffsetMilliseconds_}. */ 1 )
+
+      //
+      private: int TerminationTimeOffsetMilliseconds_;
+
+#endif
+#if( /* {private UntradableConditionConfiguration_}. */ 1 )
+
+      // Storing the configuration object as is.
+//TODO rename this to something like "economic report tradability configuration"?
+      private: TUntradableConditionConfiguration UntradableConditionConfiguration_;
+
+#endif
+#if( /* {private OrderRequestRedundantSendingConfiguration_}. */ 1 )
+
+      // Storing the configuration object as is.
+      private: TOrderRequestRedundantSendingConfiguration OrderRequestRedundantSendingConfiguration_;
+
+#endif
+
+#if( /* {private InstrumentBestAggregatedBidAskQuoteSubscription_}. */ 1 )
+
+      // The constructor does not initialize this field.
+      private: ::RApiFacade::TInstrumentBestAggregatedBidAskQuoteSubscription * InstrumentBestAggregatedBidAskQuoteSubscription_;
+
+#endif
+#if( /* {private InstrumentTradeSubscription_}. */ 1 )
+
+      // The constructor does not initialize this field.
+      private: ::RApiFacade::TInstrumentTradeSubscription * InstrumentTradeSubscription_;
+
+#endif
+
+#if( /* {private EconomicReportReceiver_}. */ 1 )
+
+      //
+      private: ::std::unique_ptr< TEconomicReportReceiverBase< int > > EconomicReportReceiver_;
+
+#endif
+#if( /* {private EconomicReportReceiverThreadRunnableAdapter_}. */ 1 )
+
+      //
+      private: ::Poco::RunnableAdapter< TPeerStrategyBase > EconomicReportReceiverThreadRunnableAdapter_;
+
+#endif
+#if( /* {private EconomicReportReceiverThread_}. */ 1 )
+
+      // This field doesn't have to be the last.
+      private: ::Common::Threading::TDisposalSafeThread< ::Poco::Thread > EconomicReportReceiverThread_;
+
+#endif
+#if( /* {private PeerStatePeerMessage_}. */ 1 )
+
+      //
+      private: TPeerStatePeerMessage_ PeerStatePeerMessage_;
+
+#endif
+#if( /* {private PeerStatePeerMessageSender_}. */ 1 )
+
+      //
+      private: TPeerMessageSender PeerStatePeerMessageSender_;
+
+#endif
+#if( /* {private PeerStatePeerMessageReceiver_}. */ 1 )
+
+      //
+      private: TEconomicReportReceiverViaUdpWithDatagramCircularQueue< TEconomicReportReceiverViaUdp< TPeerStatePeerMessage_ > >
+                      PeerStatePeerMessageReceiver_;
+
+#endif
+#if( /* {private PeerStatePeerMessageReceiverThreadRunnableAdapter_}. */ 1 )
+
+      //
+      private: ::Poco::RunnableAdapter< TPeerStrategyBase > PeerStatePeerMessageReceiverThreadRunnableAdapter_;
+
+#endif
+#if( /* {private PeerStatePeerMessageReceiverThread_}. */ 1 )
+
+      // See {EconomicReportReceiverThread_} comment.
+      private: ::Common::Threading::TDisposalSafeThread< ::Poco::Thread > PeerStatePeerMessageReceiverThread_;
+
+#endif
+#if( /* {private DateTimeKeeper_}. */ 1 )
+
+      //
+      private: ::Common::Time::TDateTimeKeeper DateTimeKeeper_;
+
+#endif
+#if( /* {private FileSystemCacheFlusher_}. */ 1 )
+
+      //
+      private: TFileSystemCacheFlusher FileSystemCacheFlusher_;
+
+#endif
+
+#if( /* {private PositionExpectedDirectionCode_}. */ 1 )
+
+      // Initialized with 0.
+      // -1 means "weak sell".
+      // +1 means "weak buy".
+      // -2 means "strong sell".
+      // +2 means "strong buy".
+      // Updated upon receiving economic report.
+      // Can have a non-default value only when {State1Code_ == TState1Code_ReceivedEconomicReport_}.
+      // yg? Magic numbers hardcoded.
+      // yg? Consider using the word "trading signal code".
+//TODO "trading signal code", "economic report tradability code"?
+// TODO Does secondary peer need this?
+// TODO move this to after RandomNumber1_?
+      private: int PositionExpectedDirectionCode_;
+
+#endif
+#if( /* {private RandomNumber1_}. */ 1 )
+
+      // Can be 0U or 1U.
+      // When this is 0U we will modify short entry orders before long ones.
+// TODO Does secondary peer need this?
+      private: unsigned int RandomNumber1_;
+
+#endif
+#if( /* {private EntryOrders_}. */ 1 )
+
+      // Short and long entry orders.
+      // We don't currently need to reserve a capacity for these collections.
+      // A secondary peer populates this after it receives a {TOrdersPeerMessage_}.
+      // yg? In a secondary peer new order request IDs are usually different and that's currently not a problem.
+// TODO 2 yg? These vectors should contain order object references. Can we use {::std::reference_wrapper}?
+      private: ::std::vector< ::RApiFacade::TSingleInstrumentOrder * > EntryOrders_[ 2U ];
+
+#endif
+#if( /* {private QuickExitOrders_}. */ 1 )
+
+      // Short and long quick exit orders.
+      // See {EntryOrders_} comments.
+      private: ::RApiFacade::TSingleInstrumentOrder * QuickExitOrders_[ 2U ];
+
+#endif
+
+#if( /* {private EconomicReportReleaseDateTimeMillisecondsSince1970_}. */ 1 )
+
+      //
+      private: ::Poco::Int64 EconomicReportReleaseDateTimeMillisecondsSince1970_;
+
+#endif
+#if( /* {private EconomicReportReleaseTimeMilliseconds_}. */ 1 )
+
+      //
+      private: int EconomicReportReleaseTimeMilliseconds_;
+
+#endif
+#if( /* {private PeerMessageReceiverInvocationTimeMilliseconds_}. */ 1 )
+
+      //
+      private: int PeerMessageReceiverInvocationTimeMilliseconds_;
+
+#endif
+#if( /* {private EconomicReportReceiverInvocationTimeMilliseconds_}. */ 1 )
+
+      //
+      private: int EconomicReportReceiverInvocationTimeMilliseconds_;
+
+#endif
+#if( /* {private EntryOrdersModificationTimeMilliseconds_}. */ 1 )
+
+      // This value is calculated precisely using {DateTimeKeeper_}.
+      private: int EntryOrdersModificationTimeMilliseconds_;
+
+#endif
+
+#if( /* {private State1Code_}. */ 1 )
+
+      // yg? Consider moving {State1Code_} and {State2Code_} upwards. Note that we initialize them before some above fields.
+      private: TState1Code_ State1Code_;
+
+#endif
+#if( /* {private State2Code_}. */ 1 )
+
+      //
+      private: TState2Code_ State2Code_;
+
+#endif
+
+#if( /* //{(private)} Instance default constructor. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+#if( /* //{(private)} Instance copy constructor. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+#if( /* {protected} Instance constructor. */ 1 )
+
+      //
+
+      protected: explicit TPeerStrategyBase
+         ( ::Common::ControlFlow::TThreadedActivityCancellationToken & threadedActivityCancellationToken1
+         );
+
+#endif
+#if( /* {protected} Instance constructor. */ 1 )
+
+      //
+
+      protected: explicit TPeerStrategyBase
+         ( ::Common::ControlFlow::TThreadedActivityCancellationToken & threadedActivityCancellationToken1,
+           TPeerStrategyBaseConfiguration && configuration1
+         );
+
+#endif
+#if( /* {(public)} Instance destructor. */ 1 )
+
+      // Could be autogenerated.
+      // {virtual}.
+
+#endif
+#if( /* //{(private) operator =}. */ 1 )
+
+      // Cannot be autogenerated.
+
+#endif
+
+#if( /* {public Initialize}. */ 1 )
+
+      //
+
+      public: void Initialize
+         ( TPeerStrategyBaseConfiguration && configuration1
+         );
+
+#endif
+#if( /* {private DoInitialize}. */ 1 )
+
+      //
+
+      private: void DoInitialize
+         ( TPeerStrategyBaseConfiguration && configuration1
+         );
+
+#endif
+#if( /* {public Prepare}. */ 1 )
+
+      //
+
+      public: virtual void Prepare
+         ( TTradingSystem & tradingSystem1
+         ) override;
+
+#endif
+#if( /* {public Start}. */ 1 )
+
+      //
+
+      public: virtual void Start() override;
+
+#endif
+#if( /* {public Run}. */ 1 )
+
+      //
+
+      public: virtual void Run() override sealed;
+
+#endif
+#if( /* {public DoRun}. */ 1 )
+
+      //
+
+//TODO use {override}
+      public: virtual void DoRun() = 0;
+
+#endif
+
+
+#if( /* {private EconomicReportReceiverThreadProc}. */ 1 )
+
+      //
+
+      private: void EconomicReportReceiverThreadProc();
+
+#endif
+
+#if( /* {private PeerStatePeerMessageReceiverThreadProc}. */ 1 )
+
+      //
+
+      private: void PeerStatePeerMessageReceiverThreadProc();
+
+#endif
+   };
+}

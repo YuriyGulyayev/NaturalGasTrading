@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{226B99D1-2E58-4923-9555-312D45AA0E95}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Prototype52</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Foundation\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Util\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Net\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\XML\include;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <UseFullPaths>true</UseFullPaths>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\lib;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\win7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>psapi.lib;WinMM.lib;PocoFoundationmtd.lib;PocoNetmtd.lib;PocoUtilmtd.lib;PocoXMLmtd.lib;kit_mtd.lib;apistb_mtd.lib;api_mtd.lib;OmneEngine_mtd.lib;OmneChannel_mtd.lib;OmneStreamEngine_mtd.lib;RApi_mtd.lib;libeay32_mtd.lib;ssleay32_mtd.lib;zlib_mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/section:.bss,!P
+/section:.data,!P
+/section:.idata,!P
+/section:.pdata,!P
+/section:.rdata,!P
+/section:.reloc,!P!D
+/section:.rsrc,!P
+/section:.text,!P
+/section:.textbss,!P
+/section:.xdata,!P
+ %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Foundation\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Util\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Net\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\XML\include;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <UseFullPaths>true</UseFullPaths>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\lib64;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\win7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>psapi.lib;WinMM.lib;PocoFoundationmtd.lib;PocoNetmtd.lib;PocoUtilmtd.lib;PocoXMLmtd.lib;kit_mtd64.lib;apistb_mtd64.lib;api_mtd64.lib;OmneEngine_mtd64.lib;OmneChannel_mtd64.lib;OmneStreamEngine_mtd64.lib;RApi_mtd64.lib;libeay32_mtd64.lib;ssleay32_mtd64.lib;zlib_mtd64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/section:.bss,!P
+/section:.data,!P
+/section:.idata,!P
+/section:.pdata,!P
+/section:.rdata,!P
+/section:.reloc,!P!D
+/section:.rsrc,!P
+/section:.text,!P
+/section:.textbss,!P
+/section:.xdata,!P
+ %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Foundation\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Util\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Net\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\XML\include;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <UseFullPaths>true</UseFullPaths>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\lib;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\win7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>psapi.lib;WinMM.lib;PocoFoundationmt.lib;PocoNetmt.lib;PocoUtilmt.lib;PocoXMLmt.lib;kit_mt.lib;apistb_mt.lib;api_mt.lib;OmneEngine_mt.lib;OmneChannel_mt.lib;OmneStreamEngine_mt.lib;RApi_mt.lib;libeay32_mt.lib;ssleay32_mt.lib;zlib_mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/section:.bss,!P
+/section:.data,!P
+/section:.idata,!P
+/section:.pdata,!P
+/section:.rdata,!P
+/section:.reloc,!P!D
+/section:.rsrc,!P
+/section:.text,!P
+/section:.textbss,!P
+/section:.xdata,!P
+ %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Foundation\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Util\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\Net\include;..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\XML\include;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <UseFullPaths>true</UseFullPaths>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\..\ThirdParties\Poco\poco-1.4.6p1-all\lib64;..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\win7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>psapi.lib;WinMM.lib;PocoFoundationmt.lib;PocoNetmt.lib;PocoUtilmt.lib;PocoXMLmt.lib;kit_mt64.lib;apistb_mt64.lib;api_mt64.lib;OmneEngine_mt64.lib;OmneChannel_mt64.lib;OmneStreamEngine_mt64.lib;RApi_mt64.lib;libeay32_mt64.lib;ssleay32_mt64.lib;zlib_mt64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/section:.bss,!P
+/section:.data,!P
+/section:.idata,!P
+/section:.pdata,!P
+/section:.rdata,!P
+/section:.reloc,!P!D
+/section:.rsrc,!P
+/section:.text,!P
+/section:.textbss,!P
+/section:.xdata,!P
+ %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\ThirdParties\Rithmic\RApi.cpp\6.4.0.0\include\RApi.h" />
+    <ClInclude Include="Common\CodeOptimization\Macros.hpp" />
+    <ClInclude Include="Common\CodeOptimization\StdAfx.h" />
+    <ClInclude Include="Common\CodeOptimization\TCodeOptimizationHelpers.hpp" />
+    <ClInclude Include="Common\ConditionValidation\StdAfx.h" />
+    <ClInclude Include="Common\ConditionValidation\TConditionValidationHelpers.hpp" />
+    <ClInclude Include="Common\Configuration\StdAfx.h" />
+    <ClInclude Include="Common\Configuration\TConfigurationHelpers.hpp" />
+    <ClInclude Include="Common\ControlFlow\StdAfx.h" />
+    <ClInclude Include="Common\ControlFlow\TControlFlowHelpers.hpp" />
+    <ClInclude Include="Common\ControlFlow\TOperationCancelledException.hpp" />
+    <ClInclude Include="Common\ControlFlow\TThreadedActivityCancellationToken.hpp" />
+    <ClInclude Include="Common\DataFormatting\StdAfx.h" />
+    <ClInclude Include="Common\DataFormatting\TDataFormattingHelpers.hpp" />
+    <ClInclude Include="Common\DataStructures\TDataStructuresHelpers.hpp" />
+    <ClInclude Include="Common\DataStructures\StdAfx.h" />
+    <ClInclude Include="Common\DataStructures\TDataBuffer.hpp" />
+    <ClInclude Include="Common\DataStructures\TPair.hpp" />
+    <ClInclude Include="Common\DataStructures\TUnionPair.hpp" />
+    <ClInclude Include="Common\Diagnostics\Macros.hpp" />
+    <ClInclude Include="Common\Diagnostics\StdAfx.h" />
+    <ClInclude Include="Common\Diagnostics\TDiagnosticsHelpers.hpp" />
+    <ClInclude Include="Common\ErrorHandling\StdAfx.h" />
+    <ClInclude Include="Common\ErrorHandling\TCriticalErrorException.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TErrorHandler.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TErrorHandlerScope.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TExceptionBase.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TFatalErrorException.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TErrorHandlingHelpers.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TRecoverableErrorException.hpp" />
+    <ClInclude Include="Common\ErrorHandling\TRegularErrorException.hpp" />
+    <ClInclude Include="Common\Globalization\StdAfx.h" />
+    <ClInclude Include="Common\Globalization\TGlobalizationHelpers.hpp" />
+    <ClInclude Include="Common\Math\StdAfx.h" />
+    <ClInclude Include="Common\Math\TCheapMovingAverageCalculator.hpp" />
+    <ClInclude Include="Common\Math\TCheapMovingAverageCalculatorConfiguration.hpp" />
+    <ClInclude Include="Common\Math\TCheapMovingAverageCalculatorConfigurationHelpers.hpp" />
+    <ClInclude Include="Common\Math\TMathHelpers.hpp" />
+    <ClInclude Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGenerator.hpp" />
+    <ClInclude Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGeneratorHelpers.hpp" />
+    <ClInclude Include="Common\Math\TMultiplyWithCarryRandomNumberGenerator.hpp" />
+    <ClInclude Include="Common\Networking\StdAfx.h" />
+    <ClInclude Include="Common\Networking\TNetworkingHelpers.hpp" />
+    <ClInclude Include="Common\Networking\TSocketNextDynamicPortNumberAdvancer.hpp" />
+    <ClInclude Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfiguration.hpp" />
+    <ClInclude Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfigurationHelpers.hpp" />
+    <ClInclude Include="Common\Networking\TStreamSocketWithDataBuffer.hpp" />
+    <ClInclude Include="Common\Networking\TStreamSocketWithDataBufferImpl.hpp" />
+    <ClInclude Include="Common\ObjectModel\StdAfx.h" />
+    <ClInclude Include="Common\ObjectModel\TDataSubscriptionBase.hpp" />
+    <ClInclude Include="Common\ObjectModel\TObjectModelHelpers.hpp" />
+    <ClInclude Include="Common\ObjectModel\TReferenceAtomicCounter.hpp" />
+    <ClInclude Include="Common\ObjectModel\TReferenceCounterHelpers.hpp" />
+    <ClInclude Include="Common\Processes\StdAfx.h" />
+    <ClInclude Include="Common\Processes\TProcessHelpers.hpp" />
+    <ClInclude Include="Common\SourceCodeModel\DecrementHeaderInclusionBalance.hpp" />
+    <ClInclude Include="Common\SourceCodeModel\DecrementHeaderInclusionDepth.hpp" />
+    <ClInclude Include="Common\SourceCodeModel\IncrementHeaderInclusionBalance.hpp" />
+    <ClInclude Include="Common\SourceCodeModel\IncrementHeaderInclusionDepth.hpp" />
+    <ClInclude Include="Common\SourceCodeModel\SourceFooter.hpp" />
+    <ClInclude Include="Common\SourceCodeModel\StdAfx.h" />
+    <ClInclude Include="Common\StdAfx.h" />
+    <ClInclude Include="Common\Threading\StdAfx.h" />
+    <ClInclude Include="Common\Threading\TMemoryAtomicOperationsHelpers.hpp" />
+    <ClInclude Include="Common\Threading\TDisposalSafeThread.hpp" />
+    <ClInclude Include="Common\Threading\TThreadingHelpers.hpp" />
+    <ClInclude Include="Common\Time\StdAfx.h" />
+    <ClInclude Include="Common\Time\TDateTimeKeeper.hpp" />
+    <ClInclude Include="Common\Time\TDateTimeKeeperConfiguration.hpp" />
+    <ClInclude Include="Common\Time\TDateTimeKeeperConfigurationHelpers.hpp" />
+    <ClInclude Include="Common\Time\TMultimediaTimerResolutionMillisecondsScope.hpp" />
+    <ClInclude Include="Common\Time\TTimeHelpers.hpp" />
+    <ClInclude Include="Common\WarmUp\StdAfx.h" />
+    <ClInclude Include="Common\WarmUp\TWarmUpHelpers.hpp" />
+    <ClInclude Include="Finance\MarketData\StdAfx.h" />
+    <ClInclude Include="Finance\MarketData\TInstrumentAggregatedQuote.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuote.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteItemsBitMask.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscription.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscriptionBase.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentTrade.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentTradeSubscriptionBase.hpp" />
+    <ClInclude Include="Finance\MarketData\TInstrumentTradeSubscription.hpp" />
+    <ClInclude Include="Finance\Math\StdAfx.h" />
+    <ClInclude Include="Finance\Math\TQuantityAndPrice.hpp" />
+    <ClInclude Include="Finance\ObjectModel\StdAfx.h" />
+    <ClInclude Include="Finance\TInstrumentDataSubscriptionBase.hpp" />
+    <ClInclude Include="Finance\StdAfx.h" />
+    <ClInclude Include="Finance\TInstrumentBase.hpp" />
+    <ClInclude Include="Finance\TInstrumentBaseConfiguration.hpp" />
+    <ClInclude Include="Finance\Trading\StdAfx.h" />
+    <ClInclude Include="Finance\Trading\TOrderModificationRequestBase.hpp" />
+    <ClInclude Include="Finance\Trading\TPositionDirectionCode.hpp" />
+    <ClInclude Include="Finance\Trading\TSingleInstrumentOrderBase.hpp" />
+    <ClInclude Include="Main.hpp" />
+    <ClInclude Include="Prototype52\StdAfx.h" />
+    <ClInclude Include="Prototype52\TApplication.hpp" />
+    <ClInclude Include="Prototype52\TApplicationConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TApplicationConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaTcpBase.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdp.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdpConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdpConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TFileSystemCacheFlusher.hpp" />
+    <ClInclude Include="Prototype52\TFileSystemCacheFlusherConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TFileSystemCacheFlusherConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TNewsHubEconomicIndicatorReceiver.hpp" />
+    <ClInclude Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TNewsHubHelpers.hpp" />
+    <ClInclude Include="Prototype52\TNumberEventsCheapMovingAverageCalculator.hpp" />
+    <ClInclude Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TOrderRequestRedundantSendingConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TOrderRequestRedundantSendingConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPeerConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPeerConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPeerMessageSender.hpp" />
+    <ClInclude Include="Prototype52\TPeerMessageSenderConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPeerMessageSenderConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPeerStrategyBase.hpp" />
+    <ClInclude Include="Prototype52\TPeerStrategyBaseConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPeerStrategyBaseConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEntryOrderConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TEntryOrderConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPreEntryOrdersSendingProtectionConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPreEntryOrdersSendingProtectionConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategy.hpp" />
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyPositionConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPrimaryPeerStrategyPositionConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategy.hpp" />
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyPositionConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TSecondaryPeerStrategyPositionConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TStrategy.hpp" />
+    <ClInclude Include="Prototype52\TStrategyBase.hpp" />
+    <ClInclude Include="Prototype52\TStrategyBaseConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TStrategyBaseConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TStrategyConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TStrategyFactory.hpp" />
+    <ClInclude Include="Prototype52\TStrategyFactoryConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TStrategyFactoryConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPeerStrategyBaseModeCode.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverViaUdpWithDatagramCircularQueue.hpp" />
+    <ClInclude Include="Prototype52\TStrategyTypeCode.hpp" />
+    <ClInclude Include="Prototype52\TTradingSystem.hpp" />
+    <ClInclude Include="Prototype52\TTradingSystemConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TTradingSystemConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TTradingSystemHelpers.hpp" />
+    <ClInclude Include="Prototype52\TUntradableConditionConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TUntradableConditionConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TWarmUpStrategy.hpp" />
+    <ClInclude Include="Prototype52\TWarmUpStrategyConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TWarmUpStrategyConfigurationHelpers.hpp" />
+    <ClInclude Include="RApiFacade\StdAfx.h" />
+    <ClInclude Include="RApiFacade\TAccountInfoConfiguration.hpp" />
+    <ClInclude Include="RApiFacade\TAccountInfoConfigurationHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TAccountInfoContainer.hpp" />
+    <ClInclude Include="RApiFacade\TInstrument.hpp" />
+    <ClInclude Include="RApiFacade\TInstrumentBestAggregatedBidAskQuoteSubscription.hpp" />
+    <ClInclude Include="RApiFacade\TInstrumentConfiguration.hpp" />
+    <ClInclude Include="RApiFacade\TInstrumentConfigurationHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TInstrumentTradeSubscription.hpp" />
+    <ClInclude Include="RApiFacade\TLogInParamsConfiguration.hpp" />
+    <ClInclude Include="RApiFacade\TLogInParamsConfigurationHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TOrderModificationRequestStateCode.hpp" />
+    <ClInclude Include="RApiFacade\TOrderTimeInForceCode.hpp" />
+    <ClInclude Include="RApiFacade\TRApiHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TREngineAdapter.hpp" />
+    <ClInclude Include="RApiFacade\TREngineAdapterConfiguration.hpp" />
+    <ClInclude Include="RApiFacade\TREngineAdapterConfigurationHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TREngineParamsConfiguration.hpp" />
+    <ClInclude Include="RApiFacade\TREngineParamsConfigurationHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TSingleInstrumentOrder.hpp" />
+    <ClInclude Include="RApiFacade\TSingleInstrumentOrderHelpers.hpp" />
+    <ClInclude Include="RApiFacade\TOrderStateBitMask.hpp" />
+    <ClInclude Include="RApiFacade\TOrderTypeCode.hpp" />
+    <ClInclude Include="RApiFacade\TSingleInstrumentOrderModificationRequest.hpp" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TargetVer.h" />
+    <ClInclude Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBase.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverBase.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverBaseConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverBaseConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverFactoryConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverFactoryConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverTypeCode.hpp" />
+    <ClInclude Include="Prototype52\TNaturalGasStorageReportDownloader.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverOutcomeCode.hpp" />
+    <ClInclude Include="Prototype52\TNaturalGasStorageReportDownloaderConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TNaturalGasStorageReportDownloaderConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TPetroleumStatusReportDownloader.hpp" />
+    <ClInclude Include="Prototype52\TPetroleumStatusReportDownloaderConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TPetroleumStatusReportDownloaderConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TTcpRequestConfiguration.hpp" />
+    <ClInclude Include="Prototype52\TTcpRequestConfigurationHelpers.hpp" />
+    <ClInclude Include="Prototype52\TEconomicReportReceiverFactory.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Common\CodeOptimization\Macros.cpp" />
+    <ClCompile Include="Common\CodeOptimization\TCodeOptimizationHelpers.cpp" />
+    <ClCompile Include="Common\ConditionValidation\TConditionValidationHelpers.cpp" />
+    <ClCompile Include="Common\Configuration\TConfigurationHelpers.cpp" />
+    <ClCompile Include="Common\ControlFlow\TControlFlowHelpers.cpp" />
+    <ClCompile Include="Common\ControlFlow\TOperationCancelledException.cpp" />
+    <ClCompile Include="Common\ControlFlow\TThreadedActivityCancellationToken.cpp" />
+    <ClCompile Include="Common\DataFormatting\TDataFormattingHelpers.cpp" />
+    <ClCompile Include="Common\DataStructures\TDataStructuresHelpers.cpp" />
+    <ClCompile Include="Common\DataStructures\TDataBuffer.cpp" />
+    <ClCompile Include="Common\DataStructures\TPair.cpp" />
+    <ClCompile Include="Common\DataStructures\TUnionPair.cpp" />
+    <ClCompile Include="Common\Diagnostics\Macros.cpp" />
+    <ClCompile Include="Common\Diagnostics\TDiagnosticsHelpers.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TCriticalErrorException.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TErrorHandler.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TErrorHandlerScope.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TExceptionBase.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TFatalErrorException.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TErrorHandlingHelpers.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TRecoverableErrorException.cpp" />
+    <ClCompile Include="Common\ErrorHandling\TRegularErrorException.cpp" />
+    <ClCompile Include="Common\Globalization\TGlobalizationHelpers.cpp" />
+    <ClCompile Include="Common\Math\TCheapMovingAverageCalculator.cpp" />
+    <ClCompile Include="Common\Math\TCheapMovingAverageCalculatorConfiguration.cpp" />
+    <ClCompile Include="Common\Math\TCheapMovingAverageCalculatorConfigurationHelpers.cpp" />
+    <ClCompile Include="Common\Math\TMathHelpers.cpp" />
+    <ClCompile Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGenerator.cpp" />
+    <ClCompile Include="Common\Math\TMultiplyWithCarryRandomNumberCommonGeneratorHelpers.cpp" />
+    <ClCompile Include="Common\Math\TMultiplyWithCarryRandomNumberGenerator.cpp" />
+    <ClCompile Include="Common\Networking\TNetworkingHelpers.cpp" />
+    <ClCompile Include="Common\Networking\TSocketNextDynamicPortNumberAdvancer.cpp" />
+    <ClCompile Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfiguration.cpp" />
+    <ClCompile Include="Common\Networking\TSocketNextDynamicPortNumberAdvancerConfigurationHelpers.cpp" />
+    <ClCompile Include="Common\Networking\TStreamSocketWithDataBuffer.cpp" />
+    <ClCompile Include="Common\Networking\TStreamSocketWithDataBufferImpl.cpp" />
+    <ClCompile Include="Common\ObjectModel\TDataSubscriptionBase.cpp" />
+    <ClCompile Include="Common\ObjectModel\TObjectModelHelpers.cpp" />
+    <ClCompile Include="Common\ObjectModel\TReferenceAtomicCounter.cpp" />
+    <ClCompile Include="Common\ObjectModel\TReferenceCounterHelpers.cpp" />
+    <ClCompile Include="Common\Processes\TProcessHelpers.cpp" />
+    <ClCompile Include="Common\Threading\TMemoryAtomicOperationsHelpers.cpp" />
+    <ClCompile Include="Common\Threading\TDisposalSafeThread.cpp" />
+    <ClCompile Include="Common\Threading\TThreadingHelpers.cpp" />
+    <ClCompile Include="Common\Time\TDateTimeKeeper.cpp" />
+    <ClCompile Include="Common\Time\TDateTimeKeeperConfiguration.cpp" />
+    <ClCompile Include="Common\Time\TDateTimeKeeperConfigurationHelpers.cpp" />
+    <ClCompile Include="Common\Time\TMultimediaTimerResolutionMillisecondsScope.cpp" />
+    <ClCompile Include="Common\Time\TTimeHelpers.cpp" />
+    <ClCompile Include="Common\WarmUp\TWarmUpHelpers.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentAggregatedQuote.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuote.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteItemsBitMask.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscription.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentBestAggregatedBidAskQuoteSubscriptionBase.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentTrade.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentTradeSubscriptionBase.cpp" />
+    <ClCompile Include="Finance\MarketData\TInstrumentTradeSubscription.cpp" />
+    <ClCompile Include="Finance\Math\TQuantityAndPrice.cpp" />
+    <ClCompile Include="Finance\TInstrumentDataSubscriptionBase.cpp" />
+    <ClCompile Include="Finance\TInstrumentBase.cpp" />
+    <ClCompile Include="Finance\TInstrumentBaseConfiguration.cpp" />
+    <ClCompile Include="Finance\Trading\TOrderModificationRequestBase.cpp" />
+    <ClCompile Include="Finance\Trading\TPositionDirectionCode.cpp" />
+    <ClCompile Include="Finance\Trading\TSingleInstrumentOrderBase.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Prototype52\TApplication.cpp" />
+    <ClCompile Include="Prototype52\TApplicationConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TApplicationConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaTcpBase.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaTcpBaseConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdp.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdpConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdpConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TFileSystemCacheFlusher.cpp" />
+    <ClCompile Include="Prototype52\TFileSystemCacheFlusherConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TFileSystemCacheFlusherConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TNewsHubEconomicIndicatorReceiver.cpp" />
+    <ClCompile Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TNewsHubEconomicIndicatorReceiverConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TNewsHubHelpers.cpp" />
+    <ClCompile Include="Prototype52\TNumberEventsCheapMovingAverageCalculator.cpp" />
+    <ClCompile Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TNumberEventsCheapMovingAverageCalculatorConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TOrderRequestRedundantSendingConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TOrderRequestRedundantSendingConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPeerConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPeerConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPeerMessageSender.cpp" />
+    <ClCompile Include="Prototype52\TPeerMessageSenderConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPeerMessageSenderConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPeerStrategyBase.cpp" />
+    <ClCompile Include="Prototype52\TPeerStrategyBaseConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPeerStrategyBaseConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEntryOrderConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TEntryOrderConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPreEntryOrdersSendingProtectionConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPreEntryOrdersSendingProtectionConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategy.cpp" />
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyPositionConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPrimaryPeerStrategyPositionConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategy.cpp" />
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyPositionConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TSecondaryPeerStrategyPositionConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TStrategy.cpp" />
+    <ClCompile Include="Prototype52\TStrategyBase.cpp" />
+    <ClCompile Include="Prototype52\TStrategyBaseConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TStrategyBaseConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TStrategyConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TStrategyFactory.cpp" />
+    <ClCompile Include="Prototype52\TStrategyFactoryConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TStrategyFactoryConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPeerStrategyBaseModeCode.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverViaUdpWithDatagramCircularQueue.cpp" />
+    <ClCompile Include="Prototype52\TStrategyTypeCode.cpp" />
+    <ClCompile Include="Prototype52\TTradingSystem.cpp" />
+    <ClCompile Include="Prototype52\TTradingSystemConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TTradingSystemConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TTradingSystemHelpers.cpp" />
+    <ClCompile Include="Prototype52\TUntradableConditionConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TUntradableConditionConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TWarmUpStrategy.cpp" />
+    <ClCompile Include="Prototype52\TWarmUpStrategyConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TWarmUpStrategyConfigurationHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TAccountInfoConfiguration.cpp" />
+    <ClCompile Include="RApiFacade\TAccountInfoConfigurationHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TAccountInfoContainer.cpp" />
+    <ClCompile Include="RApiFacade\TInstrument.cpp" />
+    <ClCompile Include="RApiFacade\TInstrumentBestAggregatedBidAskQuoteSubscription.cpp" />
+    <ClCompile Include="RApiFacade\TInstrumentConfiguration.cpp" />
+    <ClCompile Include="RApiFacade\TInstrumentConfigurationHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TInstrumentTradeSubscription.cpp" />
+    <ClCompile Include="RApiFacade\TLogInParamsConfiguration.cpp" />
+    <ClCompile Include="RApiFacade\TLogInParamsConfigurationHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TOrderModificationRequestStateCode.cpp" />
+    <ClCompile Include="RApiFacade\TOrderTimeInForceCode.cpp" />
+    <ClCompile Include="RApiFacade\TRApiHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TREngineAdapter.cpp" />
+    <ClCompile Include="RApiFacade\TREngineAdapterConfiguration.cpp" />
+    <ClCompile Include="RApiFacade\TREngineAdapterConfigurationHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TREngineParamsConfiguration.cpp" />
+    <ClCompile Include="RApiFacade\TREngineParamsConfigurationHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TSingleInstrumentOrder.cpp" />
+    <ClCompile Include="RApiFacade\TSingleInstrumentOrderHelpers.cpp" />
+    <ClCompile Include="RApiFacade\TOrderStateBitMask.cpp" />
+    <ClCompile Include="RApiFacade\TOrderTypeCode.cpp" />
+    <ClCompile Include="RApiFacade\TSingleInstrumentOrderModificationRequest.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBase.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportDownloaderWithTcpParallelRequestsBaseConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverBase.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverBaseConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverBaseConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverFactoryConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverFactoryConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverTypeCode.cpp" />
+    <ClCompile Include="Prototype52\TNaturalGasStorageReportDownloader.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverOutcomeCode.cpp" />
+    <ClCompile Include="Prototype52\TNaturalGasStorageReportDownloaderConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TNaturalGasStorageReportDownloaderConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TPetroleumStatusReportDownloader.cpp" />
+    <ClCompile Include="Prototype52\TPetroleumStatusReportDownloaderConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TPetroleumStatusReportDownloaderConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TTcpRequestConfiguration.cpp" />
+    <ClCompile Include="Prototype52\TTcpRequestConfigurationHelpers.cpp" />
+    <ClCompile Include="Prototype52\TEconomicReportReceiverFactory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Work\Prototype52\Prototype52_NaturalGasStorageReportDownloader_Demo_Test_AnyComputer.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\..\Work\Prototype52\Prototype52_NewsHubEconomicIndicatorReceiver_ES_Demo_Test_AnyComputer.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\..\Work\Prototype52\Prototype52_PetroleumStatusReportDownloader_Demo_Test_AnyComputer.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Finance\ObjectModel\_ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
