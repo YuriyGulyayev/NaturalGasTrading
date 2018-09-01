@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigurationProfile>
+  <Prototype52>
+    <ApplicationConfiguration>
+      <TradingSystemConfiguration>
+        <REngineAdapterConfiguration>
+          <REngineParamsConfiguration>
+            <!-- Rithmic requested that this specified company name. -->
+            <sAppName>Forteco:Prototype52</sAppName>
+
+            <sAppVersion>1</sAppVersion>
+            <sAdmCnnctPt>dd_admin_sslc</sAdmCnnctPt>
+
+            <!-- The logging reduces performance. Should be used for troubleshooting only.
+                 We create the {logging.dateTimeStampForLogFileName} property programmatically.
+            -->
+            <sLogFilePath>${application.configDir}Logs/REngine/Prototype52_REngine_${logging.dateTimeStampForLogFileName}_AnyComputer.txt</sLogFilePath>
+            <!--
+            <sLogFilePath/>
+            -->
+
+            <!-- Code-named "environment variables". You may provide arbitrary name-value pairs here. -->
+            <EnvironmentVariables>
+              <MML_DMN_SRVR_ADDR>ritpa11120.11.rithmic.com:65000~ritpa11120.11.rithmic.net:65000~ritpa11120.11.theomne.net:65000~ritpa11120.11.theomne.com:65000</MML_DMN_SRVR_ADDR>
+              <MML_DOMAIN_NAME>rithmic_paper_prod_domain</MML_DOMAIN_NAME>
+              <MML_LIC_SRVR_ADDR>ritpa11120.11.rithmic.com:56000~ritpa11120.11.rithmic.net:56000~ritpa11120.11.theomne.net:56000~ritpa11120.11.theomne.com:56000</MML_LIC_SRVR_ADDR>
+              <MML_LOC_BROK_ADDR>ritpa11120.11.rithmic.com:64100</MML_LOC_BROK_ADDR>
+              <MML_LOGGER_ADDR>ritpa11120.11.rithmic.com:45454~ritpa11120.11.rithmic.net:45454~ritpa11120.11.theomne.net:45454~ritpa11120.11.theomne.com:45454</MML_LOGGER_ADDR>
+              <MML_LOG_TYPE>log_net</MML_LOG_TYPE>
+              <MML_SSL_CLNT_AUTH_FILE>${application.configDir}../Rithmic/RApi.Cpp/etc/rithmic_ssl_cert_auth_params</MML_SSL_CLNT_AUTH_FILE>
+              <MML_SSL_CLNT_CERT_FILE>${application.configDir}../Rithmic/RApi.Cpp/etc/rithmic_ssl_client_params</MML_SSL_CLNT_CERT_FILE>
+              <MML_SSL_CLNT_KEY_FILE>${application.configDir}../Rithmic/RApi.Cpp/etc/rithmic_ssl_client_private_key</MML_SSL_CLNT_KEY_FILE>
+              <!-- Not used. <RAPI_OR_ENCODING>5</RAPI_OR_ENCODING>-->
+
+              <!-- Normally, an order sending will fail if price increment info wasn't requested and received yet but the following environment variable
+                   causes the API to download the data quietly if needed.
+                   yg? This will slow down the order sending but for an order sent in advance it doesn't matter.
+              <RAPI_CACHE_ORDER_RQ>1</RAPI_CACHE_ORDER_RQ>
+              -->
+
+              <!-- yg? This hack is needed to get the Windows XP build working. -->
+              <!--<RAPI_SYNC_TIMEOUT>disable</RAPI_SYNC_TIMEOUT>-->
+
+              <!-- This value doesn't affect the functionality but it's required and may not be empty. Username is specified by another parameter.
+                   The {USER} environment variable along with the {RApi::REngineParams::sAppName}, {RApi::REngineParams::sAppVersion}
+                   parameters are, according to the manual, "used by the operations team to identify R | API processes when
+                   maintaining the infrastructure and/or providing technical support".
+                   In the production, you might need to provide more/different info here.
+              -->
+              <USER>Skype: YuriyGulyayev</USER>
+            </EnvironmentVariables>
+          </REngineParamsConfiguration>
+          <LogInParamsConfiguration>
+            <sUser>demo257@sim.com</sUser>
+            <sPassword>mfpass88</sPassword>
+            <!-- Not used. <sIhCnnctPt>login_agent_history_paperc</sIhCnnctPt>-->
+            <sMdCnnctPt>login_agent_tp_paperc</sMdCnnctPt>
+            <!-- Not used. <sPnLCnnctPt>login_agent_pnl_paperc</sPnLCnnctPt>-->
+            <sTsCnnctPt>login_agent_op_paperc</sTsCnnctPt>
+          </LogInParamsConfiguration>
+
+          <!-- Only 1 instrument is supported. -->
+          <InstrumentsConfiguration>
+            <add>
+              <Symbol>ESZ3</Symbol>
+              <ExchangeAbbreviation>CME</ExchangeAbbreviation>
+
+              <!-- Shall be positive and a multiple of 1.0.
+                   This is a real number.
+//TODO set this to 1.0
+              -->
+              <QuantityIncrementMinLimit>+4.0</QuantityIncrementMinLimit>
+
+              <!-- Minimum price increment will be requested from the brokerage. -->
+              <!--<PriceIncrementMinLimit>???</PriceIncrementMinLimit>-->
+
+              <!-- yg? The app neither requests nor subscribes for trade routes. But I have a test app that requests them.
+                   yg? R|API help says: "Although the trade route 'electronic' may be returned as a valid trade route it is being deprecated and should be avoided.".
+              -->
+              <TradeRouteName>electronic</TradeRouteName>
+            </add>
+          </InstrumentsConfiguration>
+
+          <!-- Shall be "true" or "false".
+               If we are going to send any orders this must be "true" as otherwise the app won't work.
+               Otherwise this should be "false".
+          -->
+          <ShallSubscribeOrdersStateUpdate>true</ShallSubscribeOrdersStateUpdate>
+        </REngineAdapterConfiguration>
+
+        <StrategyConfiguration>
+          <!-- Strategy mode.
+               Shall be one of the following values:
+                   +1 = normal.
+                   +2 = test. Execute a test trade. Must not be used on a real account.
+               This is an integer.
+          -->
+          <ModeCode>+2</ModeCode>
+
+          <!-- A timer named "timer 1" ticks every this many milliseconds.
+               On each tick, some activities are carried out, such as the cheap moving averages are recalculated.
+               Shall be positive.
+               This is an integer.
+          -->
+          <Timer1TickIntervalMilliseconds>+2</Timer1TickIntervalMilliseconds>
+
+          <!-- When economic report is scheduled to be released.
+               This time is assumed to be in the market data time zone, which in this case is UTC.
+               If the time zone is different from the economic report releasing authority's the daylight savings time transition
+               can occur at different dates/times in the timezones. You must modify this time accordingly when needed.
+               Shall be from "00:00:00" to "23:59:59". Fractional seconds are not supported.
+          -->
+          <EconomicReportReleaseTimeOfDayMilliseconds>00:00:00</EconomicReportReleaseTimeOfDayMilliseconds>
+
+          <!-- This value is used for warm-up runs, similarly to {EconomicReportReleaseDateTimeTestOffsetMilliseconds}. -->
+          <EconomicReportReleaseDateTimeWarmUpOffsetMilliseconds>+3421</EconomicReportReleaseDateTimeWarmUpOffsetMilliseconds>
+
+          <!-- In test mode, we will calculate report release date-time by adding this value to current date-time;
+               the {EconomicReportReleaseTimeOfDayMilliseconds} parameter will be ignored.
+               This value must be reconciled with {EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/WarmUpStageEndTimeOffsetMilliseconds},
+               {EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/InvocationTimeOffsetMilliseconds},
+               {EntryOrdersModificationWarmUp2TimeOffsetMilliseconds}, {FileSystemCacheFlushing2TimeOffsetMilliseconds} and some others.
+               A too small value can leave us insufficient time to establish TCP connections, trigger some protections, or cause some other issues.
+               Shall be positive. Although you may test a negative or too small value to see what happens.
+               This is an integer.
+          -->
+          <EconomicReportReleaseDateTimeTestOffsetMilliseconds>+3421</EconomicReportReleaseDateTimeTestOffsetMilliseconds>
+
+          <!-- Specifies every how many ticks of timer 1 to log moving averages.
+               Shall be positive.
+               This is an integer.
+          -->
+          <DataLoggingIntervalTimer1Ticks>+1500</DataLoggingIntervalTimer1Ticks>
+
+          <!-- We will log this many last moving averages, regardless of {DataLoggingIntervalTimer1Ticks}.
+               Shall (should) be positive.
+               This is an integer.
+          -->
+          <NumberDataLastLoggingsOnTimer1TickToForce>+2</NumberDataLastLoggingsOnTimer1TickToForce>
+
+          <!-- This file system cache flushing warms up the flushing itself, which allows to configure
+               the {FileSystemCacheFlushing2TimeOffsetMilliseconds} parameter closer to 0.
+               This parameter is treated the same way as {FileSystemCacheFlushing2TimeOffsetMilliseconds}.
+               It appears that a file system access occurs 5 seconds after "sync.exe" terminates. Maybe that's the system
+               updates the "sync.exe" file metadata. Therefore this value should ensure that the 1st flush will occur over 5 seconds before the 2nd one.
+               This parameter must allow enough time to start any additional hard drives.
+               Shall be bigger (to the negative) than {FileSystemCacheFlushing2TimeOffsetMilliseconds} by a margin.
+               This is an integer.
+          -->
+          <FileSystemCacheFlushing1TimeOffsetMilliseconds>-20000</FileSystemCacheFlushing1TimeOffsetMilliseconds>
+
+          <!-- Specifies when to flush file system cache.
+               Relative to economic report release time.
+               Must be long enough to complete the operation before performance critical activities begin.
+               This implies that this value must be reconciled with
+               {EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/TcpRequestsConfiguration/add/FirstRequestSendingTimeOffsetMilliseconds},
+               among others.
+               If this value is too big (to the negative) the operation will not occur, which will not break any logic.
+               Current implementation can flush the cache only when the timer 1 ticks and therefore the timing is not guaranteed to be accurate.
+               Shall be negative.
+               This is an integer.
+          -->
+          <FileSystemCacheFlushing2TimeOffsetMilliseconds>-410</FileSystemCacheFlushing2TimeOffsetMilliseconds>
+
+          <!-- These 2 parameters specify when to send warm-up peer message.
+               Relative to economic report release time.
+               Shall (should) be big enough (to the negative) for all the peers to receive warm-up peer message at least 3 milliseconds
+               before they are to modify entry orders towards the money. Although no logic will be broken if it doesn't happen.
+               Shall be negative.
+               This is an integer.
+          -->
+          <PeerMessageSendingWarmUp1TimeOffsetMilliseconds>-140</PeerMessageSendingWarmUp1TimeOffsetMilliseconds>
+          <PeerMessageSendingWarmUp2TimeOffsetMilliseconds>-40</PeerMessageSendingWarmUp2TimeOffsetMilliseconds>
+
+          <!-- Relative to {EntryOrdersModificationTimeOffsetMilliseconds}.
+               Shall be negative.
+               This is an integer.
+          <EntrySuspendedOrdersSendingTimeOffsetMilliseconds>-??</EntrySuspendedOrdersSendingTimeOffsetMilliseconds>
+          -->
+
+          <!-- Specifies when to warm up entry order modification.
+               Relative to {EntryOrdersModificationTimeOffsetMilliseconds}.
+               If this value is too big (to the negative) the operation will not occur, which will not break any logic.
+               Current implementation can warm-up-modify entry orders only when the timer 1 ticks and therefore the timing is not guaranteed to be accurate.
+               To reduce the chance that we will be accused of abusing the service, in warm-up and normal mode we do not warm-up entry order modification.
+// TODO Fix previous line.
+               The allocated time should be barely enough to complete the operation before entry orders are to be modified for real. If active trading
+               starts too soon the operation will likely not complete in time and we will abort trading. This acts as another protection.
+               Shall be negative.
+               This is an integer.
+          -->
+          <EntryOrdersModificationWarmUp1TimeOffsetMilliseconds>-6800</EntryOrdersModificationWarmUp1TimeOffsetMilliseconds>
+          <EntryOrdersModificationWarmUp2TimeOffsetMilliseconds>-3400</EntryOrdersModificationWarmUp2TimeOffsetMilliseconds>
+
+          <!-- Specifies when to recalculate the cheap moving averages for the last time and release (actually modify) entry orders.
+               Relative to economic report release time.
+               This value shall ensure that the orders will be released before the report arrives.
+               If we receive the report before we are to release the orders we will not trade.
+               Shall (should) be negative.
+               This is a real number.
+          -->
+          <EntryOrdersModificationTimeOffsetMilliseconds>-1.0</EntryOrdersModificationTimeOffsetMilliseconds>
+
+          <!-- If we don't receive the report this long after report release time we will cancel entry orders.
+               This value must be smaller than {EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/EconomicReportReceptionTimeoutTimeSpanMilliseconds};
+               otherwise entry orders will be cancelled sooner.
+               Shall be positive.
+               This is an integer.
+          -->
+          <EconomicReportReceptionTimeoutTimeSpanMilliseconds>+14000</EconomicReportReceptionTimeoutTimeSpanMilliseconds>
+
+          <!-- Terminate the strategy (and the application) this long after report release time.
+               The termination will be forced even if we were unable to close open positions.
+               After that, the user must cancel any working orders and close any open positions manually.
+               This value shall be greater than {EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/EconomicReportReceptionTimeoutTimeSpanMilliseconds}.
+               Shall be positive.
+               This is an integer.
+          -->
+          <TerminationTimeOffsetMilliseconds>+15000</TerminationTimeOffsetMilliseconds>
+
+          <!-- A deep out of the money trigger or whatever price is calculated the following way:
+               Deep above the money: { MarketPrice * ( 1.0 + InstrumentDeepOutOfMoneyPriceFactor1 ) }.
+               Deep below the money: { MarketPrice * ( 1.0 - InstrumentDeepOutOfMoneyPriceFactor1 ) }.
+               yg? Note that this implies that the price must be positive.
+               Shall be positive and { < 1.0 }.
+               This is a real number.
+          -->
+          <InstrumentDeepOutOfMoneyPriceFactor1>+0.04</InstrumentDeepOutOfMoneyPriceFactor1>
+
+          <!-- The following collection shall (should?) contain 1 item per instrument.
+               Currently we support only 1 instrument and exactly 1 item in this collection.
+          -->
+          <PositionsConfiguration>
+            <add>
+              <!-- // TODO 3 yg? This should be implemented at some point.
+              <InstrumentKeyString>NYMEX:NG??</InstrumentKeyString>
+              -->
+
+              <!-- Specifies in what direction to trade based on the report deviation.
+                   Shall be one of the following values:
+                      +1 to trade in the same direction. That's, if the fact is higher than the forecast trade long.
+                      -1 to trade in the opposite direction.
+                   This is an integer.
+              -->
+              <RelativeDirectionCode>+1</RelativeDirectionCode>
+
+              <!-- Each item in this collection specifies both long and short order.
+                   Order type is stop-maket.
+                   Order quantiy is always 1 quantity increment configured for the instrument.
+                   The order of the orders should facilitate their better modification and cancellation.
+                   The closer to the money orders should probably be at the end.
+                   When this collection is empty we will not send any entry orders but will anyway cancel "any" orders.
+                   When this collection is not empty {../../../REngineAdapterConfiguration/ShallSubscribeOrdersStateUpdate} must be "true",
+                   otherwise it should be "false".
+                   yg? Under certain conditions we send some exit orders before their counterpart entry orders complete, which requires more margin.
+//TODO I uncommented Quantity.
+              -->
+              <EntryOrdersConfiguration>
+                <![CDATA[
+                <add>
+                  <!-- Trigger price is calculated the following way.
+                       Long position: {max( BestAskPrice + TriggerPriceOffset1, BestBidPrice + TriggerPriceOffset2 )}.
+                       Short position: {min( BestBidPrice - TriggerPriceOffset1, BestAskPrice - TriggerPriceOffset2 )}.
+                       The result is forced to not touch the last trade price as otherwise the order would be rejected.
+                       The result is rounded to the minimum price increment.
+                       This value should be correlated with {../../PreEntryOrdersSendingProtectionConfiguration/InstrumentBestAggregatedQuotePriceCheapMovingAverageDeviationMaxLimit}
+                       and {../../PreEntryOrdersSendingProtectionConfiguration/InstrumentLastTradePriceDeviationMaxLimit}.
+                       These values should be positive but it makes sense for {TriggerPriceOffset1} to be negative.
+                       When {TriggerPriceOffset1} is negative, {TriggerPriceOffset2} must be positive as otherwise it would be very possible that
+                       both long and short orders will get executed.
+                       This is a real number.
+                  -->
+                  <TriggerPriceOffset1>+-?.?????????</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>-+?.?????????</TriggerPriceOffset2>
+                </add>
+                ]]>
+                <add>
+                  <TriggerPriceOffset1>+0.50</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>-999.00</TriggerPriceOffset2>
+                </add>
+                <add>
+                  <TriggerPriceOffset1>+0.25</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>-999.00</TriggerPriceOffset2>
+                </add>
+                <add>
+                  <TriggerPriceOffset1>+0.00</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>-999.00</TriggerPriceOffset2>
+                </add>
+                <add>
+                  <TriggerPriceOffset1>-0.25</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>+0.25</TriggerPriceOffset2>
+                </add>
+                <add>
+                  <TriggerPriceOffset1>-0.50</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>+0.25</TriggerPriceOffset2>
+                </add>
+                <add>
+                  <TriggerPriceOffset1>-999.00</TriggerPriceOffset1>
+                  <TriggerPriceOffset2>+0.25</TriggerPriceOffset2>
+                </add>
+              </EntryOrdersConfiguration>
+
+              <!-- This is used on tradable conditoins. -->
+              <!--//TODO remove-->
+              <TradableExitConfiguration>
+                <!-- This is currently empty. -->
+              </TradableExitConfiguration>
+
+              <!-- This is used on untradable conditoins that include, among others, the report showing an untradable value. -->
+              <!--//TODO remove-->
+              <UntradableExitConfiguration>
+                <!-- This is currently empty. -->
+              </UntradableExitConfiguration>
+
+              <!-- This protection applies before we release entry orders.
+                   When {EntryOrdersConfiguration} is empty the protection logic doesn't run and so these parameters are ignored.
+              -->
+<!--//TODO remove from secondary peers-->
+              <PreEntryOrdersSendingProtectionConfiguration>
+                <!-- If the bid/ask spread is wider we will not release entry orders.
+                     For the purpose of this validation, the spread is calculated the following way: { max( ask, last ) - min( bid, last ) }.
+                     Shall be positive.
+                     This is a real number.
+                -->
+                <InstrumentBestAggregatedBidAskQuotePricesSpreadMaxLimit>+3.00</InstrumentBestAggregatedBidAskQuotePricesSpreadMaxLimit>
+
+                <!-- If the best bid or ask price cheap moving average is further from the last known best bid or ask price respectively we will not release entry orders.
+                     This value should be correlated with {../PositionsConfiguration/add/TriggerPriceOffset1} and {../PositionsConfiguration/add/TriggerPriceOffset2}.
+                     This protection is probably not that important and therefore should be relaxed.
+                     Shall be positive.
+                     This is a real number.
+//TODO I eliminated this. Review where else we mention this.
+                -->
+                <InstrumentBestAggregatedQuotePriceCheapMovingAverageDeviationMaxLimit>+2.500</InstrumentBestAggregatedQuotePriceCheapMovingAverageDeviationMaxLimit>
+
+                <!-- Maximum allowed distance from the last trade price to the bid/ask spread.
+                     This value should be correlated with {../PositionsConfiguration/add/TriggerPriceOffset1} and {../PositionsConfiguration/add/TriggerPriceOffset2}.
+                     Shall (should) be positive. Although it might make some sense to configure this value to be the negated minimum price increment.
+                     This is a real number.
+                -->
+                <InstrumentLastTradePriceDeviationMaxLimit>+1.50</InstrumentLastTradePriceDeviationMaxLimit>
+
+                <!-- If the number of trades cheap moving average is not within this range we will not release entry orders.
+                     The validation that the number of trades cheap moving average is not too small is suppressed in warm-up or test mode.
+// TODO Fix previous line.
+                     Shall be positive.
+                     This is a real number.
+                -->
+                <NumberInstrumentTradesCheapMovingAverageMinLimit>+2.2250738585072014e-308</NumberInstrumentTradesCheapMovingAverageMinLimit>
+                <NumberInstrumentTradesCheapMovingAverageMaxLimit>+20.0</NumberInstrumentTradesCheapMovingAverageMaxLimit>
+              </PreEntryOrdersSendingProtectionConfiguration>
+
+              <!-- This protection applies after we release entry orders and before we receive the report.
+                   When {EntryOrdersConfiguration} is empty the protection logic doesn't run and so these parameters are ignored.
+              -->
+<!--//TODO remove-->
+              <PostEntryOrdersSendingProtectionConfiguration>
+                <!-- If more trades occur after we release entry orders and before we receive the report we will cancel the orders.
+                      Shall be non-negative.
+                      This is an integer.
+                -->
+                <NumberInstrumentTradesMaxLimit>+50</NumberInstrumentTradesMaxLimit>
+              </PostEntryOrdersSendingProtectionConfiguration>
+            </add>
+          </PositionsConfiguration>
+
+          <UntradableConditionConfiguration>
+            <!-- Untradable ranges.
+                 If the report is outside the 1st untradable range it's interpreted as "weakly" tradable. The 2nd - "strongly".
+                 The 2nd range shall enclose or be equal the 1st one.
+                 Min limit shall be less or equal than max limit but when this is not the case the range will be ignored. Both ranges may be such and would be
+                 ignored and an alternative logic would be executed.
+                 This is an integer.
+            -->
+            <EconomicReportValueMinLimit1>+888</EconomicReportValueMinLimit1>
+            <EconomicReportValueMaxLimit1>+777</EconomicReportValueMaxLimit1>
+            <EconomicReportValueMinLimit2>+888</EconomicReportValueMinLimit2>
+            <EconomicReportValueMaxLimit2>+777</EconomicReportValueMaxLimit2>
+          </UntradableConditionConfiguration>
+
+          <!-- Every {Timer1TickIntervalMilliseconds} milliseconds the following formulas are calculated:
+               BestBidPriceCheapMovingAverage = BestBidPriceCheapMovingAverage + ( BestBidPrice - BestBidPriceCheapMovingAverage ) * Factor2
+               BestAskPriceCheapMovingAverage = BestAskPriceCheapMovingAverage + ( BestAskPrice - BestAskPriceCheapMovingAverage ) * Factor2
+          -->
+          <InstrumentBestAggregatedBidAskQuotePricesCheapMovingAverageCalculatorConfiguration>
+            <!-- Shall be positive and { < 1.0 }.
+                 This is a real number.
+            -->
+            <Factor2>+0.125</Factor2>
+          </InstrumentBestAggregatedBidAskQuotePricesCheapMovingAverageCalculatorConfiguration>
+
+          <!-- This calculator calculates cheap moving average of the number of trades occurred between timer 1 ticks. -->
+          <NumberInstrumentTradesCheapMovingAverageCalculatorConfiguration>
+            <!-- Shall be positive and { < 1.0 }.
+                 This is a real number.
+            -->
+            <Factor2>+0.125</Factor2>
+          </NumberInstrumentTradesCheapMovingAverageCalculatorConfiguration>
+
+          <EconomicReportReceiverFactoryConfiguration>
+            <!-- Shall be one of the following:
+                     +1 for {TNaturalGasStorageReportDownloader}.
+                     +2 for {TPetroleumStatusReportDownloader}.
+                     +3 for {TNewsHubEconomicIndicatorReceiver}.
+            -->
+            <DataTypeCode>+3</DataTypeCode>
+
+            <!-- Configuration of the data type specified by {DataTypeCode}. -->
+            <DataTypeConfiguration>
+              <!-- Perform warm-up steps this often until economic report receiver reports that it has fully completed its warm-up procedure.
+                   Actual interval will be randomized within 0.5 to 1.5 of this value.
+                   Shall be non-negative.
+                   This is an integer.
+              -->
+              <WarmUpStepInterval1Milliseconds>+0</WarmUpStepInterval1Milliseconds>
+
+              <!-- Perform warm-up steps this often after economic report receiver reports that it has fully completed its warm-up procedure.
+                   Actual interval will be randomized within 0.5 to 1.5 of this value.
+                   When {../DataTypeCode == +3}, a half of this value must be enough to establish a connection to NewsHub
+                   while 1.5 of this value must be less than 60000 by a margin.
+                   Shall be positive.
+                   This is an integer.
+              -->
+              <WarmUpStepInterval2Milliseconds>+31000</WarmUpStepInterval2Milliseconds>
+
+              <!-- Specifies the time starting from which the report receiver will not be warmed up any more.
+                   Relative to economic report release time.
+                   This value must be reconciled with {InvocationTimeOffsetMilliseconds} and possibly some others.
+                   When {../DataTypeCode == +1 || ../DataTypeCode == +2}, the last warm-up step must actually be performed long before that.
+                   When {../DataTypeCode == +3}, at least 1 warm-up step must occur to connect to NewsHub.
+                   Otherwise no logic will be broken if this value is so big (to the negative) that no warm-up step will occur at all.
+                   Shall be negative.
+                   This is an integer.
+// TODO Bug: this must be reconciled with peer message receiver InvocationTimeOffsetMilliseconds; do that and mention in a comment here
+              -->
+              <WarmUpStageEndTimeOffsetMilliseconds>-50</WarmUpStageEndTimeOffsetMilliseconds>
+
+              <!-- Specifies when to invoke economic report receiver.
+                   Relative to economic report release time.
+                   Must be big enough (to the negative) to let us to prepare to download the report.
+                   This value must be reconciled with {../../EconomicReportReleaseDateTimeWarmUpOffsetMilliseconds},
+                   {../../EconomicReportReleaseDateTimeTestOffsetMilliseconds}, {../../PeerDataReceiverConfiguration/InvocationTimeOffsetMilliseconds},
+                   {WarmUpStageEndTimeOffsetMilliseconds}, {RequestPreSendingTimeOffsetMilliseconds}.
+                   When {../DataTypeCode == +3}, this is when the last heartbeat message will be sent and therefore
+                   this value must be fine-tuned to receive the response right before performance critical activities start.
+                   Shall be negative.
+                   This is an integer.
+              -->
+              <InvocationTimeOffsetMilliseconds>-50</InvocationTimeOffsetMilliseconds>
+
+              <!-- If we don't receive the report this long after the report release time we will give up waiting and cancel entry orders.
+                   There is also another timeout parameter configured for the strategy that specifies when to cancel entry orders and that one must be shorter.
+                   yg? When {../DataTypeCode == +3}, due to the way Windows handles socket receive timeout, the effective timeout will be at least 501 ms
+                   yg? relative to {InvocationTimeOffsetMilliseconds} and under certain conditions the timeout can be exceeded.
+                   This timeout can also be exceeded under a variety of other conditions, which is not critical as long as
+                   {../../EconomicReportReceptionTimeoutTimeSpanMilliseconds} is correct.
+                   This value must be reconciled with {../../EconomicReportReceptionTimeoutTimeSpanMilliseconds}, {../../TerminationTimeOffsetMilliseconds}.
+                   Shall be positive.
+                   This is an integer.
+//TODO No need to make it 2 ms less any more?
+              -->
+              <EconomicReportReceptionTimeoutTimeSpanMilliseconds>+14997</EconomicReportReceptionTimeoutTimeSpanMilliseconds>
+
+              <!-- {EconomicReportSenderIPHostName} and {EconomicReportSenderIPPortNumber} specify what TCP host and port to connect to.
+                   It's safe to specify an IP address for the host.
+              -->
+              
+              <!-- NewsHub machine. -->
+              <!--<EconomicReportSenderIPHostName>74.201.255.221</EconomicReportSenderIPHostName>-->
+
+              <!-- NewsHub machine private IP address. -->
+              <!--<EconomicReportSenderIPHostName>192.168.0.220</EconomicReportSenderIPHostName>-->
+
+              <EconomicReportSenderIPHostName>ezzi.forteco.cc</EconomicReportSenderIPHostName>
+
+              <!-- Shall be from 1 to to 65535.
+                   This is an integer.
+              -->
+              <EconomicReportSenderIPPortNumber>+7655</EconomicReportSenderIPPortNumber>
+
+              <!-- When {LocalIPHostName} is null or empty we will not bind. -->
+              <LocalIPHostName/>
+
+              <!-- This must be more then enough for all messages that can arrive during a short period of time.
+                   If it's not enough we will allocate total up to twice as much memory but it will be slower.
+                   And if that happens to be not enough we will disconnect.
+                   Note that a calendar message can be long and we probably can receive 2 such messages in a row.
+                   Shall be positive.
+                   This is an integer.
+              -->
+              <SocketDataBufferInitialCapacity>+16384</SocketDataBufferInitialCapacity>
+              
+              <!-- This is treated as a string, therefore there must be no leading sign. -->
+              <EconomicIndicatorIdAsString>1401</EconomicIndicatorIdAsString>
+              
+              <!-- Economic indicator value will be multiplied by this number and the product will be rounded to an integer.
+                   To avoid precision loss this usually must be a power of 10.0.
+                   This must also be small enough to eliminate the possibility of integer overflow.
+                   Shall be positive.
+                   This is a real number.
+              -->
+              <EconomicIndicatorValueMultiplier>+1000.0</EconomicIndicatorValueMultiplier>
+            </DataTypeConfiguration>
+          </EconomicReportReceiverFactoryConfiguration>
+
+          <!-- Each instance of the application/strategy is referred to as a "peer".
+               When a peer cancels entry orders and/or receives economic report it notifies the others by sending out a datagram that is referred to as "peer message".
+          -->
+          <PeerMessageSenderConfiguration>
+            <!-- The order of items in this collection defines the order in which peer message will be sent.
+                 This collection may be empty.
+            -->
+            <PeersConfiguration>
+              <![CDATA[
+              <add>
+                <!-- If the "important" peer has multiple reachable IP addresses all of them should be listed at the beginning of the {PeersConfiguration} collection.
+                     If an "unimportant" peer has multiple reachable IP addresses the 2nd and further ones should be listed at the end of
+                     the {PeersConfiguration} collection.
+                     As the 2nd priority, the {PeersConfiguration} collection should be sorted by the increase of one way trip time from source IP address
+                     to destination one.
+                     This may also be an IP address.
+                -->
+                <PeerIPHostName>blah.example.com</PeerIPHostName>
+
+                <!-- Shall be from 1 to to 65535.
+                     This is an integer.
+                -->
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                
+                <!-- We will bind the socket to this local IP address on our network interface. When this is null or empty we will not bind.
+                     Binding makes sense only if the computer has multiple IP addresses from which the destination IP address is reachable.
+                     In that case it might be helpful to send datagrams from each of those local IP addresses,
+                     especially if the routes would be different.
+                     This may be an IP address or a host name.
+                -->
+                <LocalIPHostName>123.210.152.231</LocalIPHostName>
+
+                <!-- Shall be one of the following:
+                        0x1 = an "important" peer.
+                        0x2 = an "unimportant" peer.
+                        0x4 = NewsHub.
+                     Under some conditions, we will make an extra effort to send economic report related peer message to the peers deemed
+                     "important".
+                     It's recommended to configure the peer who is configured to send entry orders "important".
+                     It's recommended to configure the others "unimportant".
+                     This implies that since only 1 peer sends entry orders if the "../../PositionsConfiguration/EntryOrdersConfiguration"
+                     collection is not empty all peers should be configured "unimportant".
+                     If a computer where a peer is to run has multiple reachable IP addresses you might want to configure all of them
+                     as separate peers to send data via all available routes. This implies that you can end up with multiple "important" peers
+                     in this configuration.
+                     The NewsHub recipients will receive economic report itself (not peer message) in a different format.
+                -->
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <add>
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <PeerIPHostName>216.86.145.170</PeerIPHostName>
+
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x1</TypeBitMask>
+              </add>
+
+              <add>
+                <PeerIPHostName>vinax.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x1</TypeBitMask>
+              </add>
+
+              <add>
+                <PeerIPHostName>fluid.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>fluid.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName>vinax.forteco.cc</LocalIPHostName>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <add>
+                <PeerIPHostName>ezzi.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>ezzi.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName>vinax.forteco.cc</LocalIPHostName>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- "fx360.forteco.cc" private IP address. -->
+                <PeerIPHostName>192.168.0.219</PeerIPHostName>
+                
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <add>
+                <!-- Datagrams from my computer don't reach this host. -->
+                <PeerIPHostName>fx360.forteco.cc</PeerIPHostName>
+
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>fx360.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName>vinax.forteco.cc</LocalIPHostName>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine private IP address. -->
+                <PeerIPHostName>192.168.0.220</PeerIPHostName>
+                
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <add>
+                <!-- NewsHub machine.
+                     Datagrams from my computer don't reach this host.
+                -->
+                <PeerIPHostName>74.201.255.221</PeerIPHostName>
+
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine. -->
+                <PeerIPHostName>74.201.255.221</PeerIPHostName>
+
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+                <LocalIPHostName>vinax.forteco.cc</LocalIPHostName>
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>fluid.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <LocalIPHostName>216.86.145.170</LocalIPHostName>
+
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>ezzi.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <LocalIPHostName>216.86.145.170</LocalIPHostName>
+
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>fx360.forteco.cc</PeerIPHostName>
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <LocalIPHostName>216.86.145.170</LocalIPHostName>
+
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine. -->
+                <PeerIPHostName>74.201.255.221</PeerIPHostName>
+
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <LocalIPHostName>216.86.145.170</LocalIPHostName>
+
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+              ]]>
+
+              <add>
+                <!-- My computer. -->
+                <PeerIPHostName>71.167.101.202</PeerIPHostName>
+
+                <PeerIPPortNumber>+13676</PeerIPPortNumber>
+
+                <!-- We don't have separate configuration items to send peer message to this peer from both "vinax.forteco.cc" IP addresses. -->
+                <LocalIPHostName/>
+                
+                <TypeBitMask>0x2</TypeBitMask>
+              </add>
+
+              <![CDATA[
+              <add>
+                <!-- Thomson-Reuters machine. -->
+                <PeerIPHostName>208.64.66.3</PeerIPHostName>
+
+                <PeerIPPortNumber>+80</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- Thomson-Reuters machine. -->
+                <PeerIPHostName>208.64.66.3</PeerIPHostName>
+
+                <PeerIPPortNumber>+80</PeerIPPortNumber>
+                <LocalIPHostName>vinax.forteco.cc</LocalIPHostName>
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- Thomson-Reuters machine. -->
+                <PeerIPHostName>208.64.66.3</PeerIPHostName>
+
+                <PeerIPPortNumber>+80</PeerIPPortNumber>
+
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <LocalIPHostName>216.86.145.170</LocalIPHostName>
+
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <!-- The "ForwardUdpDatagrams" configuration items are not listed here. -->
+
+              <![CDATA[
+              <add>
+                <PeerIPHostName>localhost</PeerIPHostName>
+                <PeerIPPortNumber>+7657</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine private IP address. -->
+                <PeerIPHostName>192.168.0.220</PeerIPHostName>
+                
+                <PeerIPPortNumber>+7657</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine. -->
+                <PeerIPHostName>74.201.255.221</PeerIPHostName>
+
+                <PeerIPPortNumber>+7657</PeerIPPortNumber>
+                <LocalIPHostName/>
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine. -->
+                <PeerIPHostName>74.201.255.221</PeerIPHostName>
+
+                <PeerIPPortNumber>+7657</PeerIPPortNumber>
+                <LocalIPHostName>vinax.forteco.cc</LocalIPHostName>
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <![CDATA[
+              <add>
+                <!-- NewsHub machine. -->
+                <PeerIPHostName>74.201.255.221</PeerIPHostName>
+
+                <PeerIPPortNumber>+7657</PeerIPPortNumber>
+
+                <!-- Another "vinax.forteco.cc" IP address. -->
+                <LocalIPHostName>216.86.145.170</LocalIPHostName>
+
+                <TypeBitMask>0x4</TypeBitMask>
+              </add>
+              ]]>
+
+              <!-- The "ForwardUdpDatagrams" configuration items are not listed here. -->
+            </PeersConfiguration>
+          </PeerMessageSenderConfiguration>
+
+<!-- // TODO this is now named differently. Search for "PeerData". -->
+          <PeerDataReceiverConfiguration>
+            <!-- These 3 parameters are ignored. -->
+            <WarmUpStepInterval1Milliseconds>+999999999</WarmUpStepInterval1Milliseconds>
+            <WarmUpStepInterval2Milliseconds>+999999999</WarmUpStepInterval2Milliseconds>
+            <WarmUpStageEndTimeOffsetMilliseconds>-999999999</WarmUpStageEndTimeOffsetMilliseconds>
+
+            <!-- Specifies when to invoke peer message receiver.
+                 Relative to economic report release time.
+                 The logic will work correct only if this parameter is less than {../EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/InvocationTimeOffsetMilliseconds}.
+                 Both invocation times must be configured the same for all peers to increase the chance that if a peer invokes economic report receiver,
+                 immediatelly receives economic report and sends peer message to us we will have a chance to receive the peer message.
+                 The logic will also work correct only if peer message receiver invocation is configured to occur after the last economic report receiver warm-up step,
+                 which requires a reconciliation with {../EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/WarmUpStageEndTimeOffsetMilliseconds}.
+                 Shall be negative.
+                 This is an integer.
+            -->
+            <InvocationTimeOffsetMilliseconds>-3420</InvocationTimeOffsetMilliseconds>
+
+            <!-- Same as {../EconomicReportReceiverFactoryConfiguration/DataTypeConfiguration/EconomicReportReceptionTimeoutTimeSpanMilliseconds}.
+                 yg? This parameter should be less by 2 ms to increase the chance that the "Operation Cancelled" warning will not appear in the log.
+//TODO No need to make it 2 ms less any more?
+            -->
+            <EconomicReportReceptionTimeoutTimeSpanMilliseconds>+14997</EconomicReportReceptionTimeoutTimeSpanMilliseconds>
+
+            <!-- Port to listen on.
+                 We will listen on all local IP addresses.
+                 Shall be from 1 to to 65535.
+                 This is an integer.
+            -->
+            <LocalIPPortNumber>+13676</LocalIPPortNumber>
+          </PeerDataReceiverConfiguration>
+
+          <FileSystemCacheFlusherConfiguration>
+            <!-- Specifies the "sync.exe" file path.
+                 This utility is available at "http://technet.microsoft.com/en-us/sysinternals/bb897438.aspx".
+                 yg? "Sync" requires administrative privileges to run.
+                 yg? The 1st time it's launched it shows a dialog, which implies it must be launched manually before our app can use it.
+            -->
+            <FileSystemCacheFlushingApplicationFilePathName>${application.configDir}../Sync/sync.exe</FileSystemCacheFlushingApplicationFilePathName>
+          </FileSystemCacheFlusherConfiguration>
+
+          <!-- {TDateTimeKeeper} is a component that knows current time at the computer where market data originates.
+               It processes date-time-stamps coming with market data.
+          -->
+          <DateTimeKeeperConfiguration>
+            <TimerTickIntervalMillisecondsDeviation>+0.0</TimerTickIntervalMillisecondsDeviation>
+
+            <!-- Specifies how long it takes market data to reach us.
+                 If we run close to the exchange this would be a small faction of a millisecond.
+                 This value must be adjusted for both the date-time keeper implementation specifics and the way we use the date-time.
+                 I adjusted this value by -1.0.
+                 Shall be positive (unless an adjustment is needed).
+                 This is a real number.
+            -->
+            <DateTimeTickLagMilliseconds>-1.0</DateTimeTickLagMilliseconds>
+
+            <Factor1>+13960748</Factor1>
+            <Factor2>+0.0000475421543246912910</Factor2>
+            <Factor3>+0.3984524807295504700000</Factor3>
+            <Factor4>+1.1473502748706854000000</Factor4>
+            <Factor5>+0.0106998662954404820000</Factor5>
+            <Factor6>+0.3550272135985017000000</Factor6>
+
+            <!-- yg? The value of at least +5 can protect from invlid date-time-stamps in the initial indicative bid, ask, regular trade,
+                 yg? and conditional trade data ticks. Note that we no longer subscribe for conditional trades.
+                 yg? But if the connection breaks too soon and is then restored we can receive those multiple times.
+                 yg? Although the logic already filters those out, so we don't need this.
+            -->
+            <Factor7>+195</Factor7>
+
+            <Factor8>+16384</Factor8>
+            <Factor9>+131072</Factor9>
+            <Factor10>+0.0001220703125</Factor10>
+          </DateTimeKeeperConfiguration>
+        </StrategyConfiguration>
+      </TradingSystemConfiguration>
+    </ApplicationConfiguration>
+  </Prototype52>
+
+  <logging>
+    <formatters>
+      <f1>
+        <class>PatternFormatter</class>
+        <pattern>%Y-%m-%d %H:%M:%S.%F; %I; %p; %t</pattern>
+        <times>local</times>
+      </f1>
+    </formatters>
+    <channels>
+      <c1>
+        <class>FileChannel</class>
+
+        <!-- yg? This is not supported by {Poco::LoggingFactory::registerBuiltins}. I posted this as an issue.
+        <class>SimpleFileChannel</class>
+        -->
+
+        <formatter>f1</formatter>
+
+        <!-- We create the {logging.dateTimeStampForLogFileName} property programmatically. -->
+        <path>${application.configDir}Logs/Prototype52_${logging.dateTimeStampForLogFileName}_AnyComputer.txt</path>
+
+        <flush>false</flush>
+      </c1>
+      <c2>
+        <class>AsyncChannel</class>
+        <channel>c1</channel>
+      </c2>
+    </channels>
+    <loggers>
+      <root>
+        <channel>c2</channel>
+      </root>
+    </loggers>
+  </logging>
+</ConfigurationProfile>
